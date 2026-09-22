@@ -1,6 +1,7 @@
 import auth.customerLogin as custLogin
 import auth.restaurentLogin as restLogin
 import auth.registerCustomer as regCustomer
+import auth.restaurentRegister as regRestaurent
 def welcome():
     while True:
         try:
@@ -25,7 +26,7 @@ def welcome():
                     regCustomer.registerCustomer()
                     
                 case 4: 
-                    pass
+                    regRestaurent.registerRestaurent()
                 case 5:
                     print()
                     print("="*49)
