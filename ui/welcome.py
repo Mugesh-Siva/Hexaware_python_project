@@ -1,5 +1,6 @@
 import auth.customerLogin as custLogin
 import auth.restaurentLogin as restLogin
+import auth.registerCustomer as regCustomer
 def welcome():
     while True:
         try:
@@ -21,7 +22,8 @@ def welcome():
                 case 2:
                     restLogin.restaurentLogin()
                 case 3:
-                    pass
+                    regCustomer.registerCustomer()
+                    
                 case 4: 
                     pass
                 case 5:
