@@ -1,57 +1,61 @@
-import ui.welcome as prevMenu
 import database.connection as conn
+import database.setup as setup
+
+
 def registerCustomer():
-    role="customer"
-    hasRegistered=False
-    connection=conn.createConnection()
-    curser=connection.cursor()
-    print("="*49)
-    print("Welcome to Customer Registeration")
-    print("="*49)
+    setup.setupDatabase()
+    role = "customer"
+    connection = conn.createConnection()
+    cursor = connection.cursor()
 
-    while hasRegistered is False:
+    print("=" * 49)
+    print("Welcome to Customer Registration")
+    print("=" * 49)
+
+    while True:
         print()
+        print("Enter 0 in the ID and Password fields to exit to the previous menu")
+        user_id = input("Enter your ID: ").strip()
+        password = input("Enter your password: ").strip()
 
-        
-        print("Enter 0 in the ID and Password feilds to Exit the the previous menu")
-
-
-        id=input("Enter your ID: ")
-        password=input("Enter your password: ")
-
-        if(id=="0" and password=="0"):
+        if user_id == "0" and password == "0":
             print()
+            connection.close()
             return
-        
-        curser.execute("SELECT id FROM users WHERE id = ?",(id,))
-        existing_user=curser.fetchone()
-        if(existing_user):
-               print()
-               print("="*49)
-               print("User Already Exist with the ID choose another")
-               print("="*49)
-               continue
-        
-        re_password=input("ReEnter your password: ")
 
-        if(password==re_password):
-             curser.execute("INSERT INTO users (id,password,role) VALUES(?,?,?)",(id,password,role))
-             connection.commit()
-             print()
-             print("="*49)
-             print("User Registeration Sucessfull")
-             print("="*49)
-             hasRegistered=True
-        else:
-            print("passwords do not match")
-             
-               
+        if not user_id or not password:
+            print()
+            print("=" * 49)
+            print("ID and password cannot be empty")
+            print("=" * 49)
+            continue
 
+        cursor.execute("SELECT id FROM users WHERE id = %s", (user_id,))
+        existing_user = cursor.fetchone()
+        if existing_user:
+            print()
+            print("=" * 49)
+            print("User already exists with this ID. Please choose another one.")
+            print("=" * 49)
+            continue
 
-        
-    
+        re_password = input("Re-enter your password: ").strip()
 
-    
+        if password == re_password:
+            cursor.execute(
+                "INSERT INTO users (id, password, role) VALUES (%s, %s, %s)",
+                (user_id, password, role),
+            )
+            connection.commit()
+            print()
+            print("=" * 49)
+            print("User Registration Successful")
+            print("=" * 49)
+            connection.close()
+            return
 
-            
+        print()
+        print("=" * 49)
+        print("Passwords do not match")
+        print("=" * 49)
 
