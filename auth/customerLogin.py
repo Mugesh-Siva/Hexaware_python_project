@@ -1,9 +1,8 @@
-import database.connection as conn
+import ui.customer.customerHome as customerHome
+from services.customerServices.customerAuthServices import loginCustomer
 
 
 def customerLogin():
-    connection = conn.createConnection()
-    cursor = connection.cursor()
     role = "customer"
 
     while True:
@@ -18,7 +17,6 @@ def customerLogin():
 
         if user_id == "0" and password == "0":
             print()
-            connection.close()
             return
 
         if not user_id or not password:
@@ -28,18 +26,13 @@ def customerLogin():
             print("=" * 49)
             continue
 
-        cursor.execute(
-            "SELECT id, password FROM users WHERE id = %s AND password = %s AND role = %s",
-            (user_id, password, role),
-        )
-        user = cursor.fetchone()
-
-        if user:
+        if loginCustomer(user_id, password):
             print()
             print("=" * 49)
             print("Login Successful")
             print("=" * 49)
-            connection.close()
+            customer_app = customerHome.customerHome(user_id, role)
+            customer_app.start()
             return
 
         print()

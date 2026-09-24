@@ -1,10 +1,8 @@
-import database.connection as conn
 import ui.restaurent.restaurentHome as restHome
+from services.restaurantServices.restaurantAuthServices import loginRestaurant
 
 
 def restaurentLogin():
-    connection = conn.createConnection()
-    cursor = connection.cursor()
     role = "restaurant"
     print("=" * 49)
     print("Welcome to Restaurant Login")
@@ -18,7 +16,6 @@ def restaurentLogin():
 
         if user_id == "0" and password == "0":
             print()
-            connection.close()
             return
 
         if not user_id or not password:
@@ -28,23 +25,13 @@ def restaurentLogin():
             print("=" * 49)
             continue
 
-        cursor.execute(
-            "SELECT id, password FROM users WHERE id = %s AND password = %s AND role = %s",
-            (user_id, password, role),
-        )
-        user = cursor.fetchone()
-
-        if user:
+        if loginRestaurant(user_id, password):
             print()
             print("=" * 49)
             print("Login Successful")
             print("=" * 49)
-            connection.close()
-            restuarentUser=restHome.restaurentHome(user_id,role)
-            restuarentUser.restUI()
-        
-            
-
+            restaurant_user = restHome.restaurentHome(user_id, role)
+            restaurant_user.restUI()
             return
 
         print()

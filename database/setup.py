@@ -1,6 +1,12 @@
 import database.connection as connection
 
 
+def _add_missing_column(cursor, column_name, definition):
+    cursor.execute("SHOW COLUMNS FROM users LIKE %s", (column_name,))
+    if cursor.fetchone() is None:
+        cursor.execute(f"ALTER TABLE users ADD COLUMN {definition}")
+
+
 def setupDatabase():
     try:
         connection.createDatabaseIfNotExists()
@@ -12,10 +18,19 @@ def setupDatabase():
             CREATE TABLE IF NOT EXISTS users (
                 id VARCHAR(255) PRIMARY KEY,
                 password VARCHAR(255) NOT NULL,
-                role VARCHAR(20) NOT NULL
+                role VARCHAR(20) NOT NULL,
+                name VARCHAR(100) DEFAULT NULL,
+                address VARCHAR(255) DEFAULT NULL,
+                contact_number VARCHAR(30) DEFAULT NULL,
+                recovery_email VARCHAR(255) DEFAULT NULL
             )
             """
         )
+
+        _add_missing_column(cursor, "name", "name VARCHAR(100) NULL")
+        _add_missing_column(cursor, "address", "address VARCHAR(255) NULL")
+        _add_missing_column(cursor, "contact_number", "contact_number VARCHAR(30) NULL")
+        _add_missing_column(cursor, "recovery_email", "recovery_email VARCHAR(255) NULL")
 
         cursor.execute(
             """
@@ -44,6 +59,11 @@ def setupDatabase():
             """
         )
 
+        try:
+            cursor.execute("ALTER TABLE carts ADD UNIQUE (user_id)")
+        except Exception:
+            pass
+
         cursor.execute(
             """
             CREATE TABLE IF NOT EXISTS cart_items (
@@ -56,6 +76,11 @@ def setupDatabase():
             )
             """
         )
+
+        try:
+            cursor.execute("ALTER TABLE cart_items ADD UNIQUE (cart_id, menu_id)")
+        except Exception:
+            pass
 
         cursor.execute(
             """
