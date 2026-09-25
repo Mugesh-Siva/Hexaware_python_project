@@ -56,10 +56,10 @@ def createRestaurant(name, address, contact_number, user_id, recovery_email, pas
         hashed_password = _hash_password(password)
         cursor.execute(
             """
-            INSERT INTO users (id, password, role, name, address, contact_number, recovery_email)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO users (id, password, role, name, address, contact_number, recovery_email, balance)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """,
-            (user_id, hashed_password, "restaurant", name, address, contact_number, recovery_email),
+            (user_id, hashed_password, "restaurant", name, address, contact_number, recovery_email, 0.00),
         )
         conn.commit()
         cursor.close()
@@ -75,7 +75,7 @@ def getRestaurantById(user_id):
         cursor = conn.cursor(dictionary=True)
         cursor.execute(
             """
-            SELECT id, name, address, contact_number, recovery_email, role
+            SELECT id, name, address, contact_number, recovery_email, role, balance
             FROM users
             WHERE id = %s AND role = %s
             """,

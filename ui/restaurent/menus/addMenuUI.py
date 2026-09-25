@@ -1,4 +1,5 @@
 from services.menuServices.addMenu import addMenu as addMenuService
+from utils.input_helpers import safe_decimal_input, safe_text_input
 
 
 class addMenuUI:
@@ -12,10 +13,61 @@ class addMenuUI:
         print("Add Menu")
         print("=" * 49)
 
-        title = input("Enter menu title: ").strip()
-        description = input("Enter description: ").strip()
-        price = input("Enter price: ").strip()
-        nutrients = input("Enter nutrients: ").strip()
+        while True:
+            title, error = safe_text_input(
+                input("Enter menu title: ").strip(),
+                field_name="Menu title",
+                min_length=2,
+                max_length=100,
+            )
+            if error:
+                print(error)
+                retry = input("Try again? (y/n): ").strip().lower()
+                if retry != "y":
+                    return
+                continue
+            break
+
+        while True:
+            description, error = safe_text_input(
+                input("Enter description: ").strip(),
+                field_name="Description",
+                min_length=0,
+                max_length=300,
+            )
+            if error:
+                print(error)
+                retry = input("Try again? (y/n): ").strip().lower()
+                if retry != "y":
+                    return
+                continue
+            break
+
+        while True:
+            price_raw = input("Enter price: ").strip()
+            price, error = safe_decimal_input(price_raw, field_name="Price", minimum=0.01)
+            if error:
+                print(error)
+                retry = input("Try again? (y/n): ").strip().lower()
+                if retry != "y":
+                    return
+                continue
+            break
+
+        while True:
+            nutrients, error = safe_text_input(
+                input("Enter nutrients: ").strip(),
+                field_name="Nutrients",
+                min_length=0,
+                max_length=500,
+            )
+            if error:
+                print(error)
+                retry = input("Try again? (y/n): ").strip().lower()
+                if retry != "y":
+                    return
+                continue
+            break
 
         result = addMenuService(
             self.id,

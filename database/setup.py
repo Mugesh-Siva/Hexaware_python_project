@@ -9,7 +9,8 @@ def _add_missing_column(cursor, column_name, definition):
 
 def setupDatabase():
     try:
-        connection.createDatabaseIfNotExists()
+        if not connection.createDatabaseIfNotExists():
+            return False
         conn = connection.createConnection()
         cursor = conn.cursor()
 
@@ -22,7 +23,8 @@ def setupDatabase():
                 name VARCHAR(100) DEFAULT NULL,
                 address VARCHAR(255) DEFAULT NULL,
                 contact_number VARCHAR(30) DEFAULT NULL,
-                recovery_email VARCHAR(255) DEFAULT NULL
+                recovery_email VARCHAR(255) DEFAULT NULL,
+                balance DECIMAL(10, 2) NOT NULL DEFAULT 0.00
             )
             """
         )
@@ -31,6 +33,7 @@ def setupDatabase():
         _add_missing_column(cursor, "address", "address VARCHAR(255) NULL")
         _add_missing_column(cursor, "contact_number", "contact_number VARCHAR(30) NULL")
         _add_missing_column(cursor, "recovery_email", "recovery_email VARCHAR(255) NULL")
+        _add_missing_column(cursor, "balance", "balance DECIMAL(10, 2) NOT NULL DEFAULT 0.00")
 
         cursor.execute(
             """

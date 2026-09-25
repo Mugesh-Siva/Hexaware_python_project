@@ -1,6 +1,8 @@
 import ui.restaurent.menus.menuUI as menu
+import ui.restaurent.orders.orderListUI as orderListUI
 from services.menuServices.listMenu import getMenusByRestaurant
 from services.restaurantServices.restaurantAuthServices import getRestaurantById, updateRestaurantProfile
+from utils.input_helpers import safe_choice_input
 from utils.validators import validate_address, validate_contact, validate_email, validate_name
 
 
@@ -49,30 +51,29 @@ class restaurentHome:
             print("3. Profile")
             print("4. Logout")
 
-            choice = input("Enter your choice: ").strip()
+            choice, error = safe_choice_input(input("Enter your choice: ").strip(), {"1", "2", "3", "4"}, field_name="Choice")
+            if error:
+                print(error)
+                continue
 
-            match choice:
-                case "1":
-                    print()
-                    print("Menus")
-                    rest_menu = menu.menuUI(self.id, self.role)
-                    rest_menu.menuList()
+            if choice == "1":
+                print()
+                print("Menus")
+                rest_menu = menu.menuUI(self.id, self.role)
+                rest_menu.menuList()
 
-                case "2":
-                    print()
-                    print("Orders")
+            elif choice == "2":
+                print()
+                order_screen = orderListUI.orderListUI(self.id, self.role)
+                order_screen.listOrders()
 
-                case "3":
-                    self.profile_menu()
+            elif choice == "3":
+                self.profile_menu()
 
-                case "4":
-                    print()
-                    print("Logging out...")
-                    return
-
-                case _:
-                    print()
-                    print("Invalid choice. Please try again.")
+            elif choice == "4":
+                print()
+                print("Logging out...")
+                return
 
     def profile_menu(self):
         while True:
@@ -99,7 +100,11 @@ class restaurentHome:
             print("5. Back to main menu")
             print("-" * 49)
 
-            choice = input("Enter your choice (1-5): ").strip()
+            choice, error = safe_choice_input(input("Enter your choice (1-5): ").strip(), {"1", "2", "3", "4", "5"}, field_name="Choice")
+            if error:
+                print(error)
+                continue
+
             if choice == "1":
                 self.edit_profile_field("name", "restaurant name", validate_name)
             elif choice == "2":
@@ -110,8 +115,6 @@ class restaurentHome:
                 self.edit_profile_field("recovery_email", "recovery email", validate_email)
             elif choice == "5":
                 return
-            else:
-                print("Invalid choice. Please select a valid option.")
 
     def edit_profile_field(self, field_name, label, validator):
         while True:

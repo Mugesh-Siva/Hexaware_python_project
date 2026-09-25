@@ -2,6 +2,7 @@ from services.menuServices.deleteMenu import (
     deleteMenu as deleteMenuService,
     getMenuForRestaurant,
 )
+from utils.input_helpers import confirm_action, safe_int_input
 
 
 class deleteMenuUI:
@@ -15,11 +16,15 @@ class deleteMenuUI:
         print("Delete Menu")
         print("=" * 49)
 
-        menu_id = input("Enter Menu ID to delete: ").strip()
-
-        if not menu_id:
-            print("Menu ID cannot be empty.")
-            return
+        while True:
+            menu_id, error = safe_int_input(input("Enter Menu ID to delete: ").strip(), field_name="Menu ID", minimum=1)
+            if error:
+                print(error)
+                retry = input("Try again? (y/n): ").strip().lower()
+                if retry != "y":
+                    return
+                continue
+            break
 
         menu_result = getMenuForRestaurant(self.id, menu_id)
         if not menu_result["success"]:
@@ -34,8 +39,11 @@ class deleteMenuUI:
         print("Menu ID:", menu[0])
         print("Title:", menu[1])
 
-        confirm = input("Are you sure you want to delete this menu? (y/n): ").strip().lower()
-        if confirm != "y":
+        confirm, error = confirm_action(input("Are you sure you want to delete this menu? (y/n): ").strip())
+        if error:
+            print(error)
+            return
+        if not confirm:
             print("Delete cancelled.")
             return
 

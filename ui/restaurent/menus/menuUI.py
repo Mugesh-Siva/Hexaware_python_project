@@ -2,6 +2,7 @@ import ui.restaurent.menus.addMenuUI as addMenu
 import ui.restaurent.menus.deleteMenuUI as deleteMenu
 import ui.restaurent.menus.displayAllMenuUI as displayAllMenu
 import ui.restaurent.menus.updateMenuUI as updateMenu
+from utils.input_helpers import safe_choice_input
 
 
 class menuUI:
@@ -22,39 +23,35 @@ class menuUI:
             print("4. View all Menus")
             print("5. Exit to Main Menu")
 
-            choice = input("Enter your choice: ").strip()
+            choice, error = safe_choice_input(input("Enter your choice: ").strip(), {"1", "2", "3", "4", "5"}, field_name="Choice")
+            if error:
+                print(error)
+                continue
 
-            match choice:
-                case "1":
-                    print()
-                    print("Add Menu")
-                    add = addMenu.addMenuUI(self.id, self.role)
-                    add.addMenu()
+            if choice == "1":
+                print()
+                print("Add Menu")
+                add = addMenu.addMenuUI(self.id, self.role)
+                add.addMenu()
 
-                case "2":
-                    print()
-                    print("Update Menu")
-                    update = updateMenu.updateMenuUI(self.id, self.role)
-                    update.updateMenu()
+            elif choice == "2":
+                print()
+                print("Update Menu")
+                update = updateMenu.updateMenuUI(self.id, self.role)
+                update.updateMenu()
 
-                case "3":
-                    print()
-                    print("Delete Menu")
-                    delete = deleteMenu.deleteMenuUI(self.id, self.role)
-                    delete.deleteMenu()
+            elif choice == "3":
+                print()
+                print("Delete Menu")
+                delete = deleteMenu.deleteMenuUI(self.id, self.role)
+                delete.deleteMenu()
 
-                case "4":
-                    print()
-                    display = displayAllMenu.displayAllMenuUI(self.id, self.role)
-                    display.displayAllMenus()
+            elif choice == "4":
+                print()
+                display = displayAllMenu.displayAllMenuUI(self.id, self.role)
+                display.displayAllMenus()
 
-                case "5":
-                    print()
-                    print("Returning to Main Menu...")
-                    break
-
-                case _:
-                    print()
-                    print("=" * 49)
-                    print("Invalid choice. Please try again.")
-                    print("=" * 49)
+            elif choice == "5":
+                print()
+                print("Returning to Main Menu...")
+                break
