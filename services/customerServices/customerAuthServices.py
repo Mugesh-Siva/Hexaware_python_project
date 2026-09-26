@@ -2,6 +2,7 @@ import hashlib
 import os
 
 import database.connection as connection
+from utils.log_config import logger
 
 
 def _hash_password(password):
@@ -42,6 +43,7 @@ def isIdTaken(user_id):
 def createCustomer(name, address, contact_number, user_id, recovery_email, password):
     try:
         if not user_id or not password:
+            logger.warning("Customer registration failed: user ID or password is empty.")
             return {"success": False, "message": "User ID and password are required."}
 
         conn = connection.createConnection()
@@ -51,6 +53,7 @@ def createCustomer(name, address, contact_number, user_id, recovery_email, passw
         if cursor.fetchone():
             cursor.close()
             conn.close()
+            logger.warning(f"Customer registration failed: duplicate ID {user_id}")
             return {"success": False, "message": "User already exists with this ID. Please choose another one."}
 
         hashed_password = _hash_password(password)
@@ -64,8 +67,10 @@ def createCustomer(name, address, contact_number, user_id, recovery_email, passw
         conn.commit()
         cursor.close()
         conn.close()
+        logger.info(f"Customer account created successfully: {user_id}")
         return {"success": True, "message": "User registration successful."}
     except Exception as exc:
+        logger.error(f"Customer registration error for {user_id}: {exc}")
         return {"success": False, "message": f"Error while creating customer: {exc}"}
 
 
@@ -86,16 +91,20 @@ def getCustomerById(user_id):
         conn.close()
 
         if not customer:
+            logger.warning(f"Customer profile request failed: {user_id} not found")
             return {"success": False, "message": "Customer not found."}
 
+        logger.info(f"Customer profile opened for: {user_id}")
         return {"success": True, "customer": customer}
     except Exception as exc:
+        logger.error(f"Error while reading customer {user_id}: {exc}")
         return {"success": False, "message": f"Error while fetching customer: {exc}"}
 
 
 def updateCustomerProfile(user_id, field_name, new_value):
     allowed_fields = {"name", "address", "contact_number", "recovery_email"}
     if field_name not in allowed_fields:
+        logger.warning(f"Customer profile update failed for {user_id}: invalid field {field_name}")
         return {"success": False, "message": "This field cannot be edited."}
 
     try:
@@ -111,10 +120,13 @@ def updateCustomerProfile(user_id, field_name, new_value):
         conn.close()
 
         if affected == 0:
+            logger.warning(f"Customer profile update failed: customer {user_id} not found")
             return {"success": False, "message": "Profile update failed. Customer not found."}
 
+        logger.info(f"Customer profile updated: {user_id} -> {field_name}")
         return {"success": True, "message": "Profile updated successfully."}
     except Exception as exc:
+        logger.error(f"Error while updating customer profile {user_id}: {exc}")
         return {"success": False, "message": f"Error while updating profile: {exc}"}
 
 
@@ -131,8 +143,15 @@ def loginCustomer(user_id, password):
         conn.close()
 
         if not user:
+            logger.warning(f"Customer login failed: user {user_id} not found")
             return False
 
-        return verify_password(password, user["password"])
-    except Exception:
+        result = verify_password(password, user["password"])
+        if result:
+            logger.info(f"Customer login success: {user_id}")
+        else:
+            logger.warning(f"Customer login failed: wrong password for {user_id}")
+        return result
+    except Exception as exc:
+        logger.error(f"Customer login error for {user_id}: {exc}")
         return False

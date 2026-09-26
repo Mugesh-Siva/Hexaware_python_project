@@ -1,4 +1,5 @@
 import database.connection as connection
+from utils.log_config import logger
 
 
 def get_cart(user_id):
@@ -12,6 +13,7 @@ def get_cart(user_id):
         if not cart:
             cursor.close()
             conn.close()
+            logger.info(f"Customer {user_id} opened empty cart")
             return {"success": True, "items": [], "total": 0.0}
 
         cart_id = cart[0]
@@ -48,9 +50,11 @@ def get_cart(user_id):
         cursor.close()
         conn.close()
 
+        logger.info(f"Customer {user_id} checked cart with {len(items)} items")
         return {"success": True, "items": items, "total": total}
 
     except Exception as exc:
+        logger.error(f"Customer cart error for {user_id}: {exc}")
         return {"success": False, "message": f"Error while loading cart: {exc}", "items": [], "total": 0.0}
 
 
@@ -72,11 +76,14 @@ def update_cart_quantity(cart_item_id, new_quantity):
         cursor.close()
         conn.close()
 
+        logger.info(f"Cart item {cart_item_id} quantity changed to {new_quantity}")
         return {"success": True, "message": "Cart item updated successfully."}
 
     except ValueError:
+        logger.warning(f"Invalid cart quantity entered for item {cart_item_id}")
         return {"success": False, "message": "Invalid quantity. Please enter a positive integer."}
     except Exception as exc:
+        logger.error(f"Error while updating cart item {cart_item_id}: {exc}")
         return {"success": False, "message": f"Error while updating cart item: {exc}"}
 
 
@@ -91,9 +98,12 @@ def remove_cart_item(cart_item_id):
         cursor.close()
         conn.close()
 
+        logger.info(f"Cart item {cart_item_id} removed from cart")
         return {"success": True, "message": "Item removed from cart."}
 
     except ValueError:
+        logger.warning(f"Invalid cart item number entered: {cart_item_id}")
         return {"success": False, "message": "Invalid item number."}
     except Exception as exc:
+        logger.error(f"Error while removing cart item {cart_item_id}: {exc}")
         return {"success": False, "message": f"Error while removing item: {exc}"}

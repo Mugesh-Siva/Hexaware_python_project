@@ -2,19 +2,23 @@ from collections import defaultdict
 
 import database.connection as connection
 from services.customerServices.cart import get_cart
+from utils.log_config import logger
 
 
 def get_checkout_summary(user_id):
     cart_result = get_cart(user_id)
     if not cart_result["success"]:
+        logger.warning(f"Checkout failed for {user_id}: cart could not be loaded")
         return {"success": False, "message": cart_result.get("message", "Cart could not be loaded."), "items": [], "total": 0.0}
 
     items = cart_result.get("items", [])
     total = float(cart_result.get("total", 0.0) or 0.0)
 
     if not items:
+        logger.info(f"Customer {user_id} checked out empty cart")
         return {"success": False, "message": "Your cart is empty.", "items": [], "total": 0.0}
 
+    logger.info(f"Customer {user_id} viewed checkout summary with total {total}")
     return {"success": True, "message": "Cart summary loaded successfully.", "items": items, "total": total}
 
 
@@ -67,8 +71,10 @@ def get_customer_orders(user_id):
                 }
             )
 
+        logger.info(f"Customer {user_id} opened order history with {len(orders)} orders")
         return {"success": True, "orders": orders}
     except Exception as exc:
+        logger.error(f"Error while fetching customer orders for {user_id}: {exc}")
         return {"success": False, "message": f"Error while fetching orders: {exc}", "orders": []}
 
 
@@ -76,10 +82,12 @@ def place_order_from_cart(user_id, payment_method, payment_details=None):
     try:
         cart_result = get_cart(user_id)
         if not cart_result["success"]:
+            logger.warning(f"Order failed for {user_id}: cart could not be loaded")
             return {"success": False, "message": cart_result.get("message", "Cart could not be loaded.")}
 
         items = cart_result.get("items", [])
         if not items:
+            logger.info(f"Customer {user_id} tried to place empty order")
             return {"success": False, "message": "Your cart is empty. Nothing to order."}
 
         conn = connection.createConnection()
@@ -90,6 +98,7 @@ def place_order_from_cart(user_id, payment_method, payment_details=None):
         if not cart_row:
             cursor.close()
             conn.close()
+            logger.warning(f"Order failed: cart not found for {user_id}")
             return {"success": False, "message": "Cart not found."}
 
         cart_id = cart_row[0]
@@ -148,6 +157,7 @@ def place_order_from_cart(user_id, payment_method, payment_details=None):
         cursor.close()
         conn.close()
 
+        logger.info(f"Customer {user_id} placed order successfully using {payment_method}")
         return {
             "success": True,
             "message": "Order placed successfully.",
@@ -155,4 +165,5 @@ def place_order_from_cart(user_id, payment_method, payment_details=None):
             "orders": created_orders,
         }
     except Exception as exc:
+        logger.error(f"Error while placing order for {user_id}: {exc}")
         return {"success": False, "message": f"Error while placing order: {exc}"}

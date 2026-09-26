@@ -1,0 +1,288 @@
+2026-09-26 12:23:42,452 - INFO - Customer account created successfully: customer_6d4f16f6
+2026-09-26 12:23:42,881 - INFO - Customer account created successfully: customer_a288ef0a
+2026-09-26 12:23:42,961 - WARNING - Customer registration failed: duplicate ID customer_a288ef0a
+2026-09-26 12:23:43,395 - INFO - Customer account created successfully: customer_9999f58e
+2026-09-26 12:23:43,762 - INFO - Customer account created successfully: customer_1d76848d
+2026-09-26 12:23:43,878 - INFO - Customer profile opened for: customer_1d76848d
+2026-09-26 12:23:44,382 - INFO - Customer account created successfully: customer_cd1c8fa6
+2026-09-26 12:23:44,614 - INFO - Customer login success: customer_cd1c8fa6
+2026-09-26 12:23:45,140 - INFO - Customer account created successfully: customer_188a4089
+2026-09-26 12:23:45,658 - INFO - Customer account created successfully: customer_d05bdc85
+2026-09-26 12:23:45,931 - INFO - Customer account created successfully: customer_09e034aa
+2026-09-26 12:23:46,441 - INFO - Customer account created successfully: customer_a2dd88e9
+2026-09-26 12:23:46,715 - WARNING - Customer login failed: wrong password for customer_a2dd88e9
+2026-09-26 12:23:47,273 - INFO - Customer account created successfully: customer_cart_1bb7585a
+2026-09-26 12:23:47,533 - INFO - Restaurant account created successfully: restaurant_cart_61bf9c7d
+2026-09-26 12:23:47,643 - INFO - Restaurant restaurant_cart_61bf9c7d added menu Crispy Burger with ID 74
+2026-09-26 12:23:47,801 - INFO - Customer customer_cart_1bb7585a added 2 of menu 74 to cart
+2026-09-26 12:23:48,293 - INFO - Customer account created successfully: customer_cart_84a1f0bb
+2026-09-26 12:23:48,546 - INFO - Restaurant account created successfully: restaurant_cart_6d0487bd
+2026-09-26 12:23:48,664 - INFO - Restaurant restaurant_cart_6d0487bd added menu Crispy Burger with ID 75
+2026-09-26 12:23:48,843 - INFO - Customer customer_cart_84a1f0bb added 2 of menu 75 to cart
+2026-09-26 12:23:48,945 - INFO - Customer customer_cart_84a1f0bb checked cart with 1 items
+2026-09-26 12:23:48,945 - INFO - Customer customer_cart_84a1f0bb viewed checkout summary with total 240.0
+2026-09-26 12:23:49,407 - INFO - Customer account created successfully: customer_cart_9a5df82d
+2026-09-26 12:23:49,681 - INFO - Restaurant account created successfully: restaurant_cart_f6fe2c3d
+2026-09-26 12:23:49,805 - INFO - Restaurant restaurant_cart_f6fe2c3d added menu Crispy Burger with ID 76
+2026-09-26 12:23:49,923 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 12:23:50,554 - INFO - Customer account created successfully: customer_cart_dd83a583
+2026-09-26 12:23:50,822 - INFO - Restaurant account created successfully: restaurant_cart_91a43aa1
+2026-09-26 12:23:50,986 - INFO - Restaurant restaurant_cart_91a43aa1 added menu Crispy Burger with ID 77
+2026-09-26 12:23:51,129 - INFO - Customer customer_cart_dd83a583 added 2 of menu 77 to cart
+2026-09-26 12:23:51,261 - INFO - Customer customer_cart_dd83a583 checked cart with 1 items
+2026-09-26 12:23:51,432 - INFO - Customer customer_cart_dd83a583 placed order successfully using cash
+2026-09-26 12:23:51,983 - INFO - Customer account created successfully: customer_profile_aca7a39b
+2026-09-26 12:23:52,721 - INFO - Customer account created successfully: customer_profile_3a5d2373
+2026-09-26 12:23:53,576 - INFO - Customer account created successfully: customer_profile_de2a4612
+2026-09-26 12:23:54,162 - INFO - Customer account created successfully: customer_profile_077ec828
+2026-09-26 12:23:54,162 - WARNING - Customer profile update failed for customer_profile_077ec828: invalid field password
+2026-09-26 12:23:54,678 - INFO - Customer account created successfully: customer_profile_19aacc51
+2026-09-26 12:23:54,807 - INFO - Customer profile updated: customer_profile_19aacc51 -> address
+2026-09-26 12:23:55,320 - INFO - Customer account created successfully: customer_profile_34a041ee
+2026-09-26 12:23:55,418 - INFO - Customer profile updated: customer_profile_34a041ee -> name
+2026-09-26 12:23:55,858 - INFO - Restaurant account created successfully: restaurant_0fdb2f1d
+2026-09-26 12:23:56,356 - INFO - Restaurant account created successfully: restaurant_d4f86778
+2026-09-26 12:23:56,466 - WARNING - Restaurant registration failed: duplicate ID restaurant_d4f86778
+2026-09-26 12:23:56,997 - INFO - Restaurant account created successfully: restaurant_43cb9c51
+2026-09-26 12:23:57,401 - INFO - Restaurant account created successfully: restaurant_5dffe0dc
+2026-09-26 12:23:57,509 - INFO - Restaurant profile opened for: restaurant_5dffe0dc
+2026-09-26 12:23:57,983 - INFO - Restaurant account created successfully: restaurant_e56b37c4
+2026-09-26 12:23:58,193 - INFO - Restaurant login success: restaurant_e56b37c4
+2026-09-26 12:23:58,491 - INFO - Restaurant account created successfully: restaurant_466b3088
+2026-09-26 12:23:58,949 - INFO - Restaurant account created successfully: restaurant_92e0f99f
+2026-09-26 12:23:59,443 - INFO - Restaurant account created successfully: restaurant_f5892a75
+2026-09-26 12:23:59,676 - INFO - Restaurant account created successfully: restaurant_5b4d4d44
+2026-09-26 12:24:00,150 - INFO - Restaurant account created successfully: restaurant_5f374356
+2026-09-26 12:24:00,387 - WARNING - Restaurant login failed: wrong password for restaurant_5f374356
+2026-09-26 12:24:00,857 - INFO - Customer account created successfully: customer_order_c43294a2
+2026-09-26 12:24:01,095 - INFO - Restaurant account created successfully: restaurant_order_9080f1f7
+2026-09-26 12:24:01,205 - INFO - Restaurant restaurant_order_9080f1f7 added menu Noodles Bowl with ID 78
+2026-09-26 12:24:01,323 - INFO - Customer customer_order_c43294a2 added 2 of menu 78 to cart
+2026-09-26 12:24:01,423 - INFO - Customer customer_order_c43294a2 checked cart with 1 items
+2026-09-26 12:24:01,577 - INFO - Customer customer_order_c43294a2 placed order successfully using cash
+2026-09-26 12:24:01,685 - INFO - Restaurant restaurant_order_9080f1f7 opened order list with 1 orders
+2026-09-26 12:24:01,812 - INFO - Restaurant restaurant_order_9080f1f7 updated order 29 status to cooked
+2026-09-26 12:24:02,309 - INFO - Customer account created successfully: customer_order_bdc8e90f
+2026-09-26 12:24:02,514 - INFO - Restaurant account created successfully: restaurant_order_be047423
+2026-09-26 12:24:02,626 - INFO - Restaurant restaurant_order_be047423 added menu Noodles Bowl with ID 79
+2026-09-26 12:24:02,754 - INFO - Customer customer_order_bdc8e90f added 2 of menu 79 to cart
+2026-09-26 12:24:02,863 - INFO - Customer customer_order_bdc8e90f checked cart with 1 items
+2026-09-26 12:24:02,981 - INFO - Customer customer_order_bdc8e90f placed order successfully using cash
+2026-09-26 12:24:03,077 - INFO - Restaurant restaurant_order_be047423 opened order list with 1 orders
+2026-09-26 12:24:03,545 - INFO - Restaurant account created successfully: restaurant_menu_8e549665
+2026-09-26 12:24:03,662 - INFO - Restaurant restaurant_menu_8e549665 added menu Paneer Wrap with ID 80
+2026-09-26 12:24:04,129 - INFO - Restaurant account created successfully: restaurant_menu_7c0b23f3
+2026-09-26 12:24:04,244 - INFO - Restaurant restaurant_menu_7c0b23f3 added menu Paneer Wrap with ID 81
+2026-09-26 12:24:04,366 - INFO - Restaurant restaurant_menu_7c0b23f3 deleted menu 81
+2026-09-26 12:24:04,771 - INFO - Restaurant account created successfully: restaurant_menu_be39345f
+2026-09-26 12:24:04,852 - INFO - Restaurant restaurant_menu_be39345f added menu Paneer Wrap with ID 82
+2026-09-26 12:24:04,940 - INFO - Restaurant restaurant_menu_be39345f opened menu list with 1 items
+2026-09-26 12:24:05,396 - INFO - Restaurant account created successfully: restaurant_menu_33b20ac9
+2026-09-26 12:24:05,461 - INFO - Restaurant restaurant_menu_33b20ac9 added menu Paneer Wrap with ID 83
+2026-09-26 12:24:05,570 - INFO - Restaurant restaurant_menu_33b20ac9 updated menu 83
+2026-09-26 12:24:06,046 - INFO - Restaurant account created successfully: restaurant_menu_7c09aca1
+2026-09-26 12:24:06,129 - INFO - Restaurant profile updated: restaurant_menu_7c09aca1 -> name
+2026-09-26 12:26:51,689 - INFO - Customer account created successfully: custdemo
+2026-09-26 12:26:57,012 - INFO - Restaurant account created successfully: restdemo
+2026-09-26 12:27:11,758 - INFO - Restaurant login success: restdemo
+2026-09-26 12:27:11,810 - INFO - Restaurant profile opened for: restdemo
+2026-09-26 12:27:11,863 - INFO - Restaurant restdemo opened menu list with 0 items
+2026-09-26 12:27:11,943 - INFO - Restaurant restdemo added menu Butter Chicken Bowl with ID 84
+2026-09-26 12:27:34,136 - INFO - Customer login success: custdemo
+2026-09-26 12:27:34,180 - INFO - Customer profile opened for: custdemo
+2026-09-26 12:27:34,220 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 12:27:34,279 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 12:27:34,334 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 12:27:34,392 - INFO - Customer custdemo opened empty cart
+2026-09-26 12:27:34,458 - INFO - Customer profile opened for: custdemo
+2026-09-26 12:27:34,538 - INFO - Customer profile opened for: custdemo
+2026-09-26 12:27:41,018 - INFO - Customer profile opened for: custdemo
+2026-09-26 12:27:41,068 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 12:27:41,125 - INFO - Customer custdemo added 2 of menu 1 to cart
+2026-09-26 12:27:41,168 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 12:27:41,241 - INFO - Customer custdemo checked cart with 1 items
+2026-09-26 12:27:41,300 - INFO - Customer profile opened for: custdemo
+2026-09-26 12:27:41,401 - INFO - Customer custdemo checked cart with 1 items
+2026-09-26 12:27:41,401 - INFO - Customer custdemo viewed checkout summary with total 240.0
+2026-09-26 12:27:41,479 - INFO - Customer custdemo checked cart with 1 items
+2026-09-26 12:27:41,541 - INFO - Customer custdemo placed order successfully using cash
+2026-09-26 12:27:48,147 - INFO - Customer custdemo checked cart with 0 items
+2026-09-26 12:27:48,204 - INFO - Customer custdemo checked cart with 0 items
+2026-09-26 12:27:48,250 - INFO - Customer profile opened for: custdemo
+2026-09-26 12:27:54,118 - INFO - Customer profile opened for: custdemo
+2026-09-26 13:14:57,850 - INFO - Customer account created successfully: customer_d6d41bce
+2026-09-26 13:14:58,148 - INFO - Customer account created successfully: customer_a837d641
+2026-09-26 13:14:58,200 - WARNING - Customer registration failed: duplicate ID customer_a837d641
+2026-09-26 13:14:58,400 - INFO - Customer account created successfully: customer_f5285ed0
+2026-09-26 13:14:58,650 - INFO - Customer account created successfully: customer_caa4a829
+2026-09-26 13:14:58,700 - INFO - Customer profile opened for: customer_caa4a829
+2026-09-26 13:14:58,925 - INFO - Customer account created successfully: customer_ebd4da4c
+2026-09-26 13:14:59,050 - INFO - Customer login success: customer_ebd4da4c
+2026-09-26 13:14:59,250 - INFO - Customer account created successfully: customer_c75752c6
+2026-09-26 13:14:59,467 - INFO - Customer account created successfully: customer_cbdc0062
+2026-09-26 13:14:59,556 - INFO - Customer account created successfully: customer_be45addf
+2026-09-26 13:14:59,850 - INFO - Customer account created successfully: customer_5e89314c
+2026-09-26 13:14:59,960 - WARNING - Customer login failed: wrong password for customer_5e89314c
+2026-09-26 13:15:00,211 - INFO - Customer account created successfully: customer_cart_d7d79e30
+2026-09-26 13:15:00,330 - INFO - Restaurant account created successfully: restaurant_cart_4e516966
+2026-09-26 13:15:00,394 - INFO - Restaurant restaurant_cart_4e516966 added menu Crispy Burger with ID 85
+2026-09-26 13:15:00,476 - INFO - Customer customer_cart_d7d79e30 added 2 of menu 85 to cart
+2026-09-26 13:15:00,733 - INFO - Customer account created successfully: customer_cart_3a6bea17
+2026-09-26 13:15:00,843 - INFO - Restaurant account created successfully: restaurant_cart_3998b808
+2026-09-26 13:15:00,900 - INFO - Restaurant restaurant_cart_3998b808 added menu Crispy Burger with ID 86
+2026-09-26 13:15:00,974 - INFO - Customer customer_cart_3a6bea17 added 2 of menu 86 to cart
+2026-09-26 13:15:01,044 - INFO - Customer customer_cart_3a6bea17 checked cart with 1 items
+2026-09-26 13:15:01,044 - INFO - Customer customer_cart_3a6bea17 viewed checkout summary with total 240.0
+2026-09-26 13:15:01,330 - INFO - Customer account created successfully: customer_cart_7b109f57
+2026-09-26 13:15:01,450 - INFO - Restaurant account created successfully: restaurant_cart_78c29655
+2026-09-26 13:15:01,520 - INFO - Restaurant restaurant_cart_78c29655 added menu Crispy Burger with ID 87
+2026-09-26 13:15:01,580 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 13:15:01,826 - INFO - Customer account created successfully: customer_cart_9beb836e
+2026-09-26 13:15:01,950 - INFO - Restaurant account created successfully: restaurant_cart_20e2fc10
+2026-09-26 13:15:02,014 - INFO - Restaurant restaurant_cart_20e2fc10 added menu Crispy Burger with ID 88
+2026-09-26 13:15:02,095 - INFO - Customer customer_cart_9beb836e added 2 of menu 88 to cart
+2026-09-26 13:15:02,158 - INFO - Customer customer_cart_9beb836e checked cart with 1 items
+2026-09-26 13:15:02,230 - INFO - Customer customer_cart_9beb836e placed order successfully using cash
+2026-09-26 13:15:02,496 - INFO - Customer account created successfully: customer_profile_f417855b
+2026-09-26 13:15:02,960 - INFO - Customer account created successfully: customer_profile_7bb7e9a1
+2026-09-26 13:15:03,460 - INFO - Customer account created successfully: customer_profile_3f0bd0ab
+2026-09-26 13:15:03,666 - INFO - Customer account created successfully: customer_profile_7e58025f
+2026-09-26 13:15:03,666 - WARNING - Customer profile update failed for customer_profile_7e58025f: invalid field password
+2026-09-26 13:15:03,910 - INFO - Customer account created successfully: customer_profile_89f24c82
+2026-09-26 13:15:03,960 - INFO - Customer profile updated: customer_profile_89f24c82 -> address
+2026-09-26 13:15:04,241 - INFO - Customer account created successfully: customer_profile_b54644f9
+2026-09-26 13:15:04,310 - INFO - Customer profile updated: customer_profile_b54644f9 -> name
+2026-09-26 13:15:04,580 - INFO - Restaurant account created successfully: restaurant_f54e3946
+2026-09-26 13:15:04,830 - INFO - Restaurant account created successfully: restaurant_1a0be223
+2026-09-26 13:15:04,860 - WARNING - Restaurant registration failed: duplicate ID restaurant_1a0be223
+2026-09-26 13:15:05,110 - INFO - Restaurant account created successfully: restaurant_70dcf8e5
+2026-09-26 13:15:05,392 - INFO - Restaurant account created successfully: restaurant_441003fd
+2026-09-26 13:15:05,448 - INFO - Restaurant profile opened for: restaurant_441003fd
+2026-09-26 13:15:05,710 - INFO - Restaurant account created successfully: restaurant_9f511f11
+2026-09-26 13:15:05,840 - INFO - Restaurant login success: restaurant_9f511f11
+2026-09-26 13:15:06,090 - INFO - Restaurant account created successfully: restaurant_7b0cdf5e
+2026-09-26 13:15:06,355 - INFO - Restaurant account created successfully: restaurant_5a8bd9e4
+2026-09-26 13:15:06,605 - INFO - Restaurant account created successfully: restaurant_1e1e4bb6
+2026-09-26 13:15:06,691 - INFO - Restaurant account created successfully: restaurant_56a843a9
+2026-09-26 13:15:06,920 - INFO - Restaurant account created successfully: restaurant_e2f89132
+2026-09-26 13:15:07,038 - WARNING - Restaurant login failed: wrong password for restaurant_e2f89132
+2026-09-26 13:15:07,296 - INFO - Customer account created successfully: customer_order_8854e091
+2026-09-26 13:15:07,404 - INFO - Restaurant account created successfully: restaurant_order_fbece7d6
+2026-09-26 13:15:07,472 - INFO - Restaurant restaurant_order_fbece7d6 added menu Noodles Bowl with ID 89
+2026-09-26 13:15:07,545 - INFO - Customer customer_order_8854e091 added 2 of menu 89 to cart
+2026-09-26 13:15:07,618 - INFO - Customer customer_order_8854e091 checked cart with 1 items
+2026-09-26 13:15:07,721 - INFO - Customer customer_order_8854e091 placed order successfully using cash
+2026-09-26 13:15:07,790 - INFO - Restaurant restaurant_order_fbece7d6 opened order list with 1 orders
+2026-09-26 13:15:07,870 - INFO - Restaurant restaurant_order_fbece7d6 updated order 33 status to cooked
+2026-09-26 13:15:08,096 - INFO - Customer account created successfully: customer_order_5086f113
+2026-09-26 13:15:08,170 - INFO - Restaurant account created successfully: restaurant_order_4fb19c33
+2026-09-26 13:15:08,210 - INFO - Restaurant restaurant_order_4fb19c33 added menu Noodles Bowl with ID 90
+2026-09-26 13:15:08,256 - INFO - Customer customer_order_5086f113 added 2 of menu 90 to cart
+2026-09-26 13:15:08,290 - INFO - Customer customer_order_5086f113 checked cart with 1 items
+2026-09-26 13:15:08,330 - INFO - Customer customer_order_5086f113 placed order successfully using cash
+2026-09-26 13:15:08,386 - INFO - Restaurant restaurant_order_4fb19c33 opened order list with 1 orders
+2026-09-26 13:15:08,643 - INFO - Restaurant account created successfully: restaurant_menu_9cba72c0
+2026-09-26 13:15:08,692 - INFO - Restaurant restaurant_menu_9cba72c0 added menu Paneer Wrap with ID 91
+2026-09-26 13:15:08,869 - INFO - Restaurant account created successfully: restaurant_menu_b70b060a
+2026-09-26 13:15:08,910 - INFO - Restaurant restaurant_menu_b70b060a added menu Paneer Wrap with ID 92
+2026-09-26 13:15:08,956 - INFO - Restaurant restaurant_menu_b70b060a deleted menu 92
+2026-09-26 13:15:09,133 - INFO - Restaurant account created successfully: restaurant_menu_efa28376
+2026-09-26 13:15:09,175 - INFO - Restaurant restaurant_menu_efa28376 added menu Paneer Wrap with ID 93
+2026-09-26 13:15:09,215 - INFO - Restaurant restaurant_menu_efa28376 opened menu list with 1 items
+2026-09-26 13:15:09,426 - INFO - Restaurant account created successfully: restaurant_menu_2ba3bf3f
+2026-09-26 13:15:09,483 - INFO - Restaurant restaurant_menu_2ba3bf3f added menu Paneer Wrap with ID 94
+2026-09-26 13:15:09,549 - INFO - Restaurant restaurant_menu_2ba3bf3f updated menu 94
+2026-09-26 13:15:09,832 - INFO - Restaurant account created successfully: restaurant_menu_8adfcf25
+2026-09-26 13:15:09,901 - INFO - Restaurant profile updated: restaurant_menu_8adfcf25 -> name
+2026-09-26 13:17:50,374 - INFO - Customer account created successfully: customer_d7903ba4
+2026-09-26 13:17:50,588 - INFO - Customer account created successfully: customer_371eee15
+2026-09-26 13:17:50,634 - WARNING - Customer registration failed: duplicate ID customer_371eee15
+2026-09-26 13:17:50,849 - INFO - Customer account created successfully: customer_cf7bee38
+2026-09-26 13:17:51,065 - INFO - Customer account created successfully: customer_73b55ffc
+2026-09-26 13:17:51,109 - INFO - Customer profile opened for: customer_73b55ffc
+2026-09-26 13:17:51,311 - INFO - Customer account created successfully: customer_59d0c435
+2026-09-26 13:17:51,397 - INFO - Customer login success: customer_59d0c435
+2026-09-26 13:17:51,639 - INFO - Customer account created successfully: customer_5e90a47c
+2026-09-26 13:17:51,877 - INFO - Customer account created successfully: customer_df6d85ef
+2026-09-26 13:17:51,980 - INFO - Customer account created successfully: customer_db07129d
+2026-09-26 13:17:52,193 - INFO - Customer account created successfully: customer_4cc570ac
+2026-09-26 13:17:52,276 - WARNING - Customer login failed: wrong password for customer_4cc570ac
+2026-09-26 13:17:52,485 - INFO - Customer account created successfully: customer_profile_9c740a52
+2026-09-26 13:17:52,826 - INFO - Customer account created successfully: customer_profile_63296794
+2026-09-26 13:17:53,209 - INFO - Customer account created successfully: customer_profile_b5b6c9cd
+2026-09-26 13:17:53,449 - INFO - Customer account created successfully: customer_profile_2559b890
+2026-09-26 13:17:53,449 - WARNING - Customer profile update failed for customer_profile_2559b890: invalid field password
+2026-09-26 13:17:53,678 - INFO - Customer account created successfully: customer_profile_048faf5b
+2026-09-26 13:17:53,730 - INFO - Customer profile updated: customer_profile_048faf5b -> address
+2026-09-26 13:17:53,953 - INFO - Customer account created successfully: customer_profile_ba7337ab
+2026-09-26 13:17:54,003 - INFO - Customer profile updated: customer_profile_ba7337ab -> name
+2026-09-26 13:17:54,168 - INFO - Customer account created successfully: customer_cart_608c71cb
+2026-09-26 13:17:54,251 - INFO - Restaurant account created successfully: restaurant_cart_b9b272d1
+2026-09-26 13:17:54,289 - INFO - Restaurant restaurant_cart_b9b272d1 added menu Crispy Burger with ID 95
+2026-09-26 13:17:54,334 - INFO - Customer customer_cart_608c71cb added 2 of menu 95 to cart
+2026-09-26 13:17:54,569 - INFO - Customer account created successfully: customer_cart_00372a0a
+2026-09-26 13:17:54,664 - INFO - Restaurant account created successfully: restaurant_cart_863332d9
+2026-09-26 13:17:54,703 - INFO - Restaurant restaurant_cart_863332d9 added menu Crispy Burger with ID 96
+2026-09-26 13:17:54,773 - INFO - Customer customer_cart_00372a0a added 2 of menu 96 to cart
+2026-09-26 13:17:54,835 - INFO - Customer customer_cart_00372a0a checked cart with 1 items
+2026-09-26 13:17:54,844 - INFO - Customer customer_cart_00372a0a viewed checkout summary with total 240.0
+2026-09-26 13:17:55,094 - INFO - Customer account created successfully: customer_cart_d78c9a33
+2026-09-26 13:17:55,178 - INFO - Restaurant account created successfully: restaurant_cart_dca17863
+2026-09-26 13:17:55,214 - INFO - Restaurant restaurant_cart_dca17863 added menu Crispy Burger with ID 97
+2026-09-26 13:17:55,253 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 13:17:55,433 - INFO - Customer account created successfully: customer_cart_171c361b
+2026-09-26 13:17:55,523 - INFO - Restaurant account created successfully: restaurant_cart_0aedecc9
+2026-09-26 13:17:55,563 - INFO - Restaurant restaurant_cart_0aedecc9 added menu Crispy Burger with ID 98
+2026-09-26 13:17:55,608 - INFO - Customer customer_cart_171c361b added 2 of menu 98 to cart
+2026-09-26 13:17:55,647 - INFO - Customer customer_cart_171c361b checked cart with 1 items
+2026-09-26 13:17:55,704 - INFO - Customer customer_cart_171c361b placed order successfully using cash
+2026-09-26 13:17:55,883 - INFO - Restaurant account created successfully: restaurant_34ce30e4
+2026-09-26 13:17:56,043 - INFO - Restaurant account created successfully: restaurant_4fd600ee
+2026-09-26 13:17:56,079 - WARNING - Restaurant registration failed: duplicate ID restaurant_4fd600ee
+2026-09-26 13:17:56,257 - INFO - Restaurant account created successfully: restaurant_f930712c
+2026-09-26 13:17:56,441 - INFO - Restaurant account created successfully: restaurant_873f7cb7
+2026-09-26 13:17:56,484 - INFO - Restaurant profile opened for: restaurant_873f7cb7
+2026-09-26 13:17:56,665 - INFO - Restaurant account created successfully: restaurant_1d5dbfdf
+2026-09-26 13:17:56,741 - INFO - Restaurant login success: restaurant_1d5dbfdf
+2026-09-26 13:17:56,894 - INFO - Restaurant account created successfully: restaurant_77314f4e
+2026-09-26 13:17:57,053 - INFO - Restaurant account created successfully: restaurant_1dd443a3
+2026-09-26 13:17:57,215 - INFO - Restaurant account created successfully: restaurant_49550d55
+2026-09-26 13:17:57,301 - INFO - Restaurant account created successfully: restaurant_608b6f0e
+2026-09-26 13:17:57,484 - INFO - Restaurant account created successfully: restaurant_52519112
+2026-09-26 13:17:57,562 - WARNING - Restaurant login failed: wrong password for restaurant_52519112
+2026-09-26 13:17:57,739 - INFO - Restaurant account created successfully: restaurant_menu_0ade76e7
+2026-09-26 13:17:57,784 - INFO - Restaurant restaurant_menu_0ade76e7 added menu Paneer Wrap with ID 99
+2026-09-26 13:17:57,963 - INFO - Restaurant account created successfully: restaurant_menu_251daddf
+2026-09-26 13:17:58,013 - INFO - Restaurant restaurant_menu_251daddf added menu Paneer Wrap with ID 100
+2026-09-26 13:17:58,067 - INFO - Restaurant restaurant_menu_251daddf deleted menu 100
+2026-09-26 13:17:58,233 - INFO - Restaurant account created successfully: restaurant_menu_24c53c45
+2026-09-26 13:17:58,266 - INFO - Restaurant restaurant_menu_24c53c45 added menu Paneer Wrap with ID 101
+2026-09-26 13:17:58,295 - INFO - Restaurant restaurant_menu_24c53c45 opened menu list with 1 items
+2026-09-26 13:17:58,476 - INFO - Restaurant account created successfully: restaurant_menu_f67ad1f5
+2026-09-26 13:17:58,511 - INFO - Restaurant restaurant_menu_f67ad1f5 added menu Paneer Wrap with ID 102
+2026-09-26 13:17:58,553 - INFO - Restaurant restaurant_menu_f67ad1f5 updated menu 102
+2026-09-26 13:17:58,709 - INFO - Restaurant account created successfully: restaurant_menu_44eed28a
+2026-09-26 13:17:58,752 - INFO - Restaurant profile updated: restaurant_menu_44eed28a -> name
+2026-09-26 13:17:58,897 - INFO - Customer account created successfully: customer_order_c3225aa1
+2026-09-26 13:17:58,974 - INFO - Restaurant account created successfully: restaurant_order_50702908
+2026-09-26 13:17:59,013 - INFO - Restaurant restaurant_order_50702908 added menu Noodles Bowl with ID 103
+2026-09-26 13:17:59,054 - INFO - Customer customer_order_c3225aa1 added 2 of menu 103 to cart
+2026-09-26 13:17:59,095 - INFO - Customer customer_order_c3225aa1 checked cart with 1 items
+2026-09-26 13:17:59,143 - INFO - Customer customer_order_c3225aa1 placed order successfully using cash
+2026-09-26 13:17:59,181 - INFO - Restaurant restaurant_order_50702908 opened order list with 1 orders
+2026-09-26 13:17:59,240 - INFO - Restaurant restaurant_order_50702908 updated order 36 status to cooked
+2026-09-26 13:17:59,429 - INFO - Customer account created successfully: customer_order_663c6b33
+2026-09-26 13:17:59,513 - INFO - Restaurant account created successfully: restaurant_order_aa8d93f2
+2026-09-26 13:17:59,571 - INFO - Restaurant restaurant_order_aa8d93f2 added menu Noodles Bowl with ID 104
+2026-09-26 13:17:59,640 - INFO - Customer customer_order_663c6b33 added 2 of menu 104 to cart
+2026-09-26 13:17:59,684 - INFO - Customer customer_order_663c6b33 checked cart with 1 items
+2026-09-26 13:17:59,747 - INFO - Customer customer_order_663c6b33 placed order successfully using cash
+2026-09-26 13:17:59,802 - INFO - Restaurant restaurant_order_aa8d93f2 opened order list with 1 orders
+2026-09-26 16:31:46,665 - INFO - Customer login success: 123
+2026-09-26 16:31:46,685 - INFO - Customer profile opened for: 123
+2026-09-26 16:34:21,948 - INFO - Restaurant account created successfully: 456
+2026-09-26 16:35:00,732 - INFO - Restaurant login success: 456
+2026-09-26 16:35:00,781 - INFO - Restaurant profile opened for: 456
+2026-09-26 16:35:00,825 - INFO - Restaurant 456 opened menu list with 0 items
+2026-09-26 16:35:27,473 - INFO - Restaurant profile opened for: 456
+2026-09-26 16:43:50,025 - INFO - Restaurant profile opened for: 456

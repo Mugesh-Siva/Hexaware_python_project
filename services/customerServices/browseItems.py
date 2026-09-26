@@ -1,4 +1,5 @@
 import database.connection as connection
+from utils.log_config import logger
 
 
 def get_menu_page(page_number=0, page_size=10):
@@ -26,6 +27,7 @@ def get_menu_page(page_number=0, page_size=10):
         cursor.close()
         conn.close()
 
+        logger.info(f"Customer opened menu page {page_number} with {len(items)} items")
         return {
             "success": True,
             "items": items,
@@ -33,6 +35,7 @@ def get_menu_page(page_number=0, page_size=10):
         }
 
     except Exception as exc:
+        logger.error(f"Menu page error: {exc}")
         return {
             "success": False,
             "message": f"Error while fetching menu items: {exc}",
@@ -47,6 +50,7 @@ def add_item_to_cart(user_id, menu_id, quantity):
         quantity = int(quantity)
 
         if quantity <= 0:
+            logger.warning(f"Customer {user_id} tried to add invalid quantity {quantity} to cart")
             return {"success": False, "message": "Quantity must be greater than 0."}
 
         conn = connection.createConnection()
@@ -65,11 +69,13 @@ def add_item_to_cart(user_id, menu_id, quantity):
         if not menu:
             cursor.close()
             conn.close()
+            logger.warning(f"Customer {user_id} tried to add missing menu {menu_id} to cart")
             return {"success": False, "message": "Item not found."}
 
         if menu[4] != 1:
             cursor.close()
             conn.close()
+            logger.warning(f"Customer {user_id} tried to add unavailable menu {menu_id} to cart")
             return {"success": False, "message": "This item is currently unavailable."}
 
         cursor.execute("SELECT cart_id FROM carts WHERE user_id = %s", (user_id,))
@@ -110,12 +116,15 @@ def add_item_to_cart(user_id, menu_id, quantity):
         cursor.close()
         conn.close()
 
+        logger.info(f"Customer {user_id} added {quantity} of menu {menu_id} to cart")
         return {
             "success": True,
             "message": f"Added {quantity} x {menu[1]} to cart.",
         }
 
     except ValueError:
+        logger.warning(f"Customer {user_id} entered invalid quantity while adding to cart")
         return {"success": False, "message": "Invalid quantity. Please enter a positive integer."}
     except Exception as exc:
+        logger.error(f"Error while adding item to cart for {user_id}: {exc}")
         return {"success": False, "message": f"Error while adding to cart: {exc}"}
