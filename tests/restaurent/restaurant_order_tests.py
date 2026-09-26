@@ -28,6 +28,14 @@ class RestaurantOrderTests(unittest.TestCase):
         result = get_orders_for_restaurant(self.restaurant_id)
         self.assertTrue(result["success"])
 
+    def test_restaurant_can_see_customer_address_in_order(self):
+        place_order_from_cart(self.customer_id, "cash")
+        orders = get_orders_for_restaurant(self.restaurant_id)
+        self.assertTrue(orders["success"])
+        self.assertGreater(len(orders["orders"]), 0)
+        self.assertIn("customer_address", orders["orders"][0])
+        self.assertEqual(orders["orders"][0]["customer_address"], "Order Street")
+
     def test_order_status_update(self):
         place_order_from_cart(self.customer_id, "cash")
         orders = get_orders_for_restaurant(self.restaurant_id)

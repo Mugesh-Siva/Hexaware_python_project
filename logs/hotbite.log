@@ -286,3 +286,86 @@
 2026-09-26 16:35:00,825 - INFO - Restaurant 456 opened menu list with 0 items
 2026-09-26 16:35:27,473 - INFO - Restaurant profile opened for: 456
 2026-09-26 16:43:50,025 - INFO - Restaurant profile opened for: 456
+2026-09-26 17:17:23,986 - INFO - Customer login success: 123
+2026-09-26 17:17:24,020 - INFO - Customer profile opened for: 123
+2026-09-26 17:17:40,419 - INFO - Restaurant login success: 456
+2026-09-26 17:17:40,454 - INFO - Restaurant profile opened for: 456
+2026-09-26 17:17:40,505 - INFO - Restaurant 456 opened menu list with 0 items
+2026-09-26 17:18:24,083 - INFO - Restaurant 456 added menu Bririyani with ID 105
+2026-09-26 17:18:29,976 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 17:18:36,933 - INFO - Customer opened menu page 1 with 10 items
+2026-09-26 17:18:40,144 - INFO - Customer opened menu page 2 with 10 items
+2026-09-26 17:18:42,232 - INFO - Customer opened menu page 3 with 10 items
+2026-09-26 17:57:59,087 - INFO - Customer searched for 'burger' and got 10 matches
+2026-09-26 17:57:59,101 - WARNING - Customer search failed: empty search term
+2026-09-26 17:57:59,151 - INFO - Customer searched for 'zzzz-not-real-menu-name' and got 0 matches
+2026-09-26 17:58:04,683 - INFO - Customer searched for 'burger' and got 10 matches
+2026-09-26 17:58:04,689 - WARNING - Customer search failed: empty search term
+2026-09-26 17:58:04,736 - INFO - Customer searched for 'zzzz-not-real-menu-name' and got 0 matches
+2026-09-26 18:02:29,821 - INFO - Customer login success: 123
+2026-09-26 18:02:29,860 - INFO - Customer profile opened for: 123
+2026-09-26 18:02:36,516 - INFO - Customer searched for 'briyani' and got 0 matches
+2026-09-26 18:02:50,187 - INFO - Customer searched for 'bribriyani' and got 0 matches
+2026-09-26 18:02:59,260 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 18:03:15,541 - INFO - Customer searched for 'Paneer Wrap Deluxe' and got 10 matches
+2026-09-26 18:03:34,332 - INFO - Customer searched for 'Paneer Wrap Deluxe' and got 3 matches
+2026-09-26 18:07:18,069 - INFO - Customer searched for '102' and got 0 matches
+2026-09-26 18:07:27,764 - INFO - Customer searched for 'Paneer Wrap Deluxe' and got 10 matches
+2026-09-26 18:07:47,111 - INFO - Customer searched for 'faefae' and got 0 matches
+2026-09-26 18:08:01,662 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 18:08:02,825 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 18:08:05,463 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 18:08:13,948 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 18:13:18,261 - INFO - Customer 123 opened empty cart
+2026-09-26 18:13:20,935 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 18:13:25,498 - INFO - Customer 123 added 1 of menu 14 to cart
+2026-09-26 18:13:25,557 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 18:13:28,189 - INFO - Customer opened menu page 0 with 10 items
+2026-09-26 18:15:12,883 - INFO - Customer login success: 123
+2026-09-26 18:15:12,933 - INFO - Customer profile opened for: 123
+2026-09-26 18:16:07,445 - INFO - Restaurant 456 added menu qwerty with ID 106
+2026-09-26 18:16:18,019 - INFO - Customer searched for 'qwertt' and got 0 matches
+2026-09-26 18:16:24,210 - INFO - Customer searched for 'qwerty' and got 1 matches
+2026-09-26 18:16:31,510 - INFO - Customer 123 added 2 of menu 106 to cart
+2026-09-26 18:16:58,936 - INFO - Customer 123 checked cart with 2 items
+2026-09-26 18:16:58,989 - INFO - Customer profile opened for: 123
+2026-09-26 18:19:48,568 - INFO - Customer 123 checked cart with 2 items
+2026-09-26 18:19:48,570 - INFO - Customer 123 viewed checkout summary with total 268.0
+2026-09-26 18:20:12,552 - INFO - Customer 123 checked cart with 2 items
+2026-09-26 18:20:12,620 - INFO - Customer 123 placed order successfully using hotbite
+2026-09-26 18:20:32,496 - INFO - Restaurant 456 opened order list with 1 orders
+2026-09-26 18:21:20,419 - INFO - Restaurant 456 opened order list with 1 orders
+2026-09-26 18:25:45,671 - INFO - Customer account created successfully: customer_order_5aeac104
+2026-09-26 18:25:45,789 - INFO - Restaurant account created successfully: restaurant_order_2f6a1560
+2026-09-26 18:25:45,837 - INFO - Restaurant restaurant_order_2f6a1560 added menu Noodles Bowl with ID 107
+2026-09-26 18:25:45,922 - INFO - Customer customer_order_5aeac104 added 2 of menu 107 to cart
+2026-09-26 18:25:45,973 - INFO - Customer customer_order_5aeac104 checked cart with 1 items
+2026-09-26 18:25:46,042 - INFO - Customer customer_order_5aeac104 placed order successfully using cash
+2026-09-26 18:25:46,103 - INFO - Restaurant restaurant_order_2f6a1560 opened order list with 1 orders
+2026-09-26 18:25:46,171 - INFO - Restaurant restaurant_order_2f6a1560 updated order 40 status to cooked
+2026-09-26 18:25:46,421 - INFO - Customer account created successfully: customer_order_5f2fb57c
+2026-09-26 18:25:46,536 - INFO - Restaurant account created successfully: restaurant_order_22285f76
+2026-09-26 18:25:46,607 - INFO - Restaurant restaurant_order_22285f76 added menu Noodles Bowl with ID 108
+2026-09-26 18:25:46,704 - INFO - Customer customer_order_5f2fb57c added 2 of menu 108 to cart
+2026-09-26 18:25:46,770 - INFO - Customer customer_order_5f2fb57c checked cart with 1 items
+2026-09-26 18:25:46,824 - INFO - Customer customer_order_5f2fb57c placed order successfully using cash
+2026-09-26 18:25:46,870 - INFO - Restaurant restaurant_order_22285f76 opened order list with 1 orders
+2026-09-26 18:25:47,075 - INFO - Customer account created successfully: customer_order_9c103688
+2026-09-26 18:25:47,169 - INFO - Restaurant account created successfully: restaurant_order_10d3a6b4
+2026-09-26 18:25:47,239 - INFO - Restaurant restaurant_order_10d3a6b4 added menu Noodles Bowl with ID 109
+2026-09-26 18:25:47,305 - INFO - Customer customer_order_9c103688 added 2 of menu 109 to cart
+2026-09-26 18:25:47,373 - INFO - Customer customer_order_9c103688 checked cart with 1 items
+2026-09-26 18:25:47,460 - INFO - Customer customer_order_9c103688 placed order successfully using cash
+2026-09-26 18:25:47,503 - INFO - Restaurant restaurant_order_10d3a6b4 opened order list with 1 orders
+2026-09-26 18:25:54,050 - INFO - Customer searched for 'burger' and got 10 matches
+2026-09-26 18:25:54,057 - WARNING - Customer search failed: empty search term
+2026-09-26 18:25:54,108 - INFO - Customer searched for 'zzzz-not-real-menu-name' and got 0 matches
+2026-09-26 18:26:52,288 - INFO - Restaurant login success: 456
+2026-09-26 18:26:52,326 - INFO - Restaurant profile opened for: 456
+2026-09-26 18:26:52,364 - INFO - Restaurant 456 opened menu list with 2 items
+2026-09-26 18:27:06,228 - INFO - Restaurant 456 opened order list with 1 orders
+2026-09-26 18:28:53,784 - INFO - Restaurant 456 opened order list with 1 orders
+2026-09-26 18:30:17,383 - INFO - Restaurant login success: 456
+2026-09-26 18:30:17,437 - INFO - Restaurant profile opened for: 456
+2026-09-26 18:30:17,497 - INFO - Restaurant 456 opened menu list with 2 items
+2026-09-26 18:30:33,201 - INFO - Restaurant 456 opened order list with 1 orders

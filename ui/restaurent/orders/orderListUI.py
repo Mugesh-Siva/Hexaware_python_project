@@ -24,11 +24,12 @@ class orderListUI:
             return
 
         for order in orders:
-            print(f"Order ID       : {order['order_id']}")
-            print(f"Customer Name  : {order['customer_name']}")
-            print(f"Customer ID    : {order['customer_id']}")
-            print(f"Status         : {order['status']}")
-            print(f"Ordered At     : {order['created_at']}")
+            print(f"Order ID        : {order['order_id']}")
+            print(f"Customer Name   : {order['customer_name']}")
+            print(f"Customer ID     : {order['customer_id']}")
+            print(f"Delivery Address: {order.get('customer_address', 'Address not set')}")
+            print(f"Status          : {order['status']}")
+            print(f"Ordered At      : {order['created_at']}")
             print("Items:")
 
             for item in order["items"]:

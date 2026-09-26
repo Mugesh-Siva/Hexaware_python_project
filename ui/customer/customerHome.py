@@ -1,5 +1,5 @@
 from services.customerServices.balanceService import add_hotbite_balance, get_hotbite_balance
-from services.customerServices.browseItems import add_item_to_cart, get_menu_page
+from services.customerServices.browseItems import add_item_to_cart, get_menu_page, search_menu_items
 from services.customerServices.cart import get_cart, remove_cart_item, update_cart_quantity
 from services.customerServices.customerAuthServices import getCustomerById, updateCustomerProfile
 from services.customerServices.orderService import get_checkout_summary, get_customer_orders, place_order_from_cart
@@ -9,7 +9,7 @@ from services.paymentServices.paymentService import (
     process_hotbite_payment,
 )
 from utils.custom_exceptions import PaymentError, ValidationError
-from utils.input_helpers import confirm_action, safe_choice_input, safe_int_input
+from utils.input_helpers import confirm_action, safe_choice_input, safe_int_input, safe_text_input
 from utils.validators import (
     validate_address,
     validate_amount,
@@ -26,6 +26,7 @@ class customerHome:
     def __init__(self, id, role):
         self.id = id
         self.role = role
+        self.search_cache_term = ""
 
     def print_customer_header(self):
         profile_result = getCustomerById(self.id)
@@ -59,27 +60,30 @@ class customerHome:
                 print("=" * 49)
                 print("CUSTOMER DASHBOARD")
                 print("=" * 49)
-                print("1. Browse Items")
-                print("2. Cart")
-                print("3. Orders")
-                print("4. Profile")
-                print("5. Logout")
+                print("1. Search Menu")
+                print("2. Browse Items")
+                print("3. Cart")
+                print("4. Orders")
+                print("5. Profile")
+                print("6. Logout")
                 print("=" * 49)
 
-                choice, error = safe_choice_input(input("Enter your choice (1-5): ").strip(), {"1", "2", "3", "4", "5"}, field_name="Choice")
+                choice, error = safe_choice_input(input("Enter your choice (1-6): ").strip(), {"1", "2", "3", "4", "5", "6"}, field_name="Choice")
                 if error:
                     print(error)
                     continue
 
                 if choice == "1":
-                    self.browse_items()
+                    self.search_menu()
                 elif choice == "2":
-                    self.cart_menu()
+                    self.browse_items()
                 elif choice == "3":
-                    self.order_history_menu()
+                    self.cart_menu()
                 elif choice == "4":
-                    self.profile_menu()
+                    self.order_history_menu()
                 elif choice == "5":
+                    self.profile_menu()
+                elif choice == "6":
                     print("Logging out...")
                     return
 
@@ -217,6 +221,103 @@ class customerHome:
 
             except ValueError:
                 print("Invalid input. Please enter a number.")
+            except Exception as exc:
+                print(f"Error: {exc}")
+                continue
+
+    def search_menu(self):
+        current_page = 0
+
+        while True:
+            try:
+                print()
+                print("-" * 49)
+                print("SEARCH MENU")
+                print("-" * 49)
+                print("Type 'next' for next page")
+                print("Type 'back' for previous page")
+                print("Type item ID to add it to cart")
+                print("Type '0' to exit this search menu")
+                print("Type 'new' to search a different item")
+                print("-" * 49)
+
+                if current_page == 0:
+                    search_term = input("Enter menu name to search: ").strip()
+                    if search_term.lower() in {"0", "exit", "cancel", "back"}:
+                        print("Exiting search menu.")
+                        return
+                    cleaned_term, error = safe_text_input(search_term, field_name="Search term", min_length=1, max_length=50)
+                    if error:
+                        print(error)
+                        continue
+                    result = search_menu_items(cleaned_term, current_page, 10)
+                else:
+                    result = search_menu_items(self.search_cache_term, current_page, 10)
+
+                if not result["success"]:
+                    print(result["message"])
+                    return
+
+                items = result["items"]
+                if not items:
+                    search_value = result.get("search_term", "your search")
+                    print(f"No menu found for '{search_value}'.")
+                    retry = input("Search again? (y/n): ").strip().lower()
+                    if retry not in {"y", "yes"}:
+                        return
+                    current_page = 0
+                    self.search_cache_term = ""
+                    continue
+
+                self.search_cache_term = result.get("search_term", self.search_cache_term)
+                print()
+                print("-" * 49)
+                print(f"SEARCH RESULTS FOR: {self.search_cache_term.upper()}")
+                print("-" * 49)
+                for item in items:
+                    menu_id, title, description, price, nutrients, availability, user_id = item
+                    status = "Available" if availability == 1 else "Unavailable"
+                    print(f"{menu_id}. {title} - ₹{price}")
+                    print(f"   {description}")
+                    print(f"   Nutrients: {nutrients or 'Not specified'} | Status: {status}")
+                print("-" * 49)
+
+                user_choice = input("Enter choice: ").strip()
+                choice = user_choice.lower()
+                valid_ids = {str(item[0]) for item in items}
+
+                if choice == "next":
+                    if (current_page + 1) * 10 >= result["total_count"]:
+                        print("No more matching items.")
+                    else:
+                        current_page += 1
+                    continue
+
+                if choice == "back":
+                    if current_page == 0:
+                        print("Already on first search page.")
+                    else:
+                        current_page -= 1
+                    continue
+
+                if choice in {"0", "exit", "cancel"}:
+                    print("Exiting search menu.")
+                    return
+
+                if choice == "new":
+                    current_page = 0
+                    self.search_cache_term = ""
+                    continue
+
+                if choice in valid_ids:
+                    selected_item = next(item for item in items if str(item[0]) == choice)
+                    self.add_to_cart(selected_item)
+                    continue
+
+                print("Invalid input. Please use item ID, next, back, new, or 0 to exit.")
+
+            except ValueError:
+                print("Invalid input. Please enter a valid menu search choice.")
             except Exception as exc:
                 print(f"Error: {exc}")
                 continue

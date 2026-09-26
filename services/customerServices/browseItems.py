@@ -44,6 +44,55 @@ def get_menu_page(page_number=0, page_size=10):
         }
 
 
+def search_menu_items(search_term, page_number=0, page_size=10):
+    try:
+        term = str(search_term or "").strip()
+        if not term:
+            logger.warning("Customer search failed: empty search term")
+            return {"success": False, "message": "Search term is required.", "items": [], "total_count": 0}
+
+        conn = connection.createConnection()
+        cursor = conn.cursor()
+
+        like_pattern = f"%{term}%"
+        cursor.execute(
+            """
+            SELECT menu_id, title, description, price, nutrients, availability, user_id
+            FROM menus
+            WHERE availability = 1 AND title LIKE %s
+            ORDER BY menu_id
+            LIMIT %s OFFSET %s
+            """,
+            (like_pattern, page_size, page_number * page_size),
+        )
+        items = cursor.fetchall()
+
+        cursor.execute(
+            "SELECT COUNT(*) FROM menus WHERE availability = 1 AND title LIKE %s",
+            (like_pattern,),
+        )
+        total_count = cursor.fetchone()[0]
+
+        cursor.close()
+        conn.close()
+
+        logger.info(f"Customer searched for '{term}' and got {len(items)} matches")
+        return {
+            "success": True,
+            "items": items,
+            "total_count": total_count,
+            "search_term": term,
+        }
+    except Exception as exc:
+        logger.error(f"Search menu error for '{search_term}': {exc}")
+        return {
+            "success": False,
+            "message": f"Error while searching menu: {exc}",
+            "items": [],
+            "total_count": 0,
+        }
+
+
 def add_item_to_cart(user_id, menu_id, quantity):
     try:
         menu_id = int(menu_id)
