@@ -1,0 +1,516 @@
+('D:\\python_training_project\\build\\HoyBite\\PYZ-00.pyz',
+ [('_compat_pickle',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('_compression',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_compression.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('_pydatetime',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_pydatetime.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_strptime.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_threading_local.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\argparse.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ast.py',
+   'PYMODULE'),
+  ('auth', '-', 'PYMODULE'),
+  ('auth.customerLogin',
+   'D:\\python_training_project\\auth\\customerLogin.py',
+   'PYMODULE'),
+  ('auth.registerCustomer',
+   'D:\\python_training_project\\auth\\registerCustomer.py',
+   'PYMODULE'),
+  ('auth.restaurentLogin',
+   'D:\\python_training_project\\auth\\restaurentLogin.py',
+   'PYMODULE'),
+  ('auth.restaurentRegister',
+   'D:\\python_training_project\\auth\\restaurentRegister.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\base64.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\bisect.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\bz2.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\calendar.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\contextlib.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\contextvars.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\copy.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\csv.py',
+   'PYMODULE'),
+  ('database', '-', 'PYMODULE'),
+  ('database.connection',
+   'D:\\python_training_project\\database\\connection.py',
+   'PYMODULE'),
+  ('database.setup',
+   'D:\\python_training_project\\database\\setup.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\dataclasses.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\datetime.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\decimal.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\dis.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\email\\utils.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\fnmatch.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\fractions.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\getopt.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\gettext.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\gzip.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\hashlib.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib._abc',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\_abc.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\__init__.py',
+   'PYMODULE'),
+  ('importlib.metadata._adapters',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.metadata._collections',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_collections.py',
+   'PYMODULE'),
+  ('importlib.metadata._functools',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_functools.py',
+   'PYMODULE'),
+  ('importlib.metadata._itertools',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.metadata._meta',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_meta.py',
+   'PYMODULE'),
+  ('importlib.metadata._text',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\_text.py',
+   'PYMODULE'),
+  ('importlib.readers',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\__init__.py',
+   'PYMODULE'),
+  ('importlib.resources._adapters',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.resources._common',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\_common.py',
+   'PYMODULE'),
+  ('importlib.resources._itertools',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.resources._legacy',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\_legacy.py',
+   'PYMODULE'),
+  ('importlib.resources.abc',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources.readers',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\resources\\readers.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\inspect.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ipaddress.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\lzma.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\numbers.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\opcode.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pickle.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\py_compile.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\quopri.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\random.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\selectors.py',
+   'PYMODULE'),
+  ('services', '-', 'PYMODULE'),
+  ('services.customerServices', '-', 'PYMODULE'),
+  ('services.customerServices.balanceService',
+   'D:\\python_training_project\\services\\customerServices\\balanceService.py',
+   'PYMODULE'),
+  ('services.customerServices.browseItems',
+   'D:\\python_training_project\\services\\customerServices\\browseItems.py',
+   'PYMODULE'),
+  ('services.customerServices.cart',
+   'D:\\python_training_project\\services\\customerServices\\cart.py',
+   'PYMODULE'),
+  ('services.customerServices.customerAuthServices',
+   'D:\\python_training_project\\services\\customerServices\\customerAuthServices.py',
+   'PYMODULE'),
+  ('services.customerServices.orderService',
+   'D:\\python_training_project\\services\\customerServices\\orderService.py',
+   'PYMODULE'),
+  ('services.menuServices', '-', 'PYMODULE'),
+  ('services.menuServices.addMenu',
+   'D:\\python_training_project\\services\\menuServices\\addMenu.py',
+   'PYMODULE'),
+  ('services.menuServices.deleteMenu',
+   'D:\\python_training_project\\services\\menuServices\\deleteMenu.py',
+   'PYMODULE'),
+  ('services.menuServices.listMenu',
+   'D:\\python_training_project\\services\\menuServices\\listMenu.py',
+   'PYMODULE'),
+  ('services.menuServices.updateMenu',
+   'D:\\python_training_project\\services\\menuServices\\updateMenu.py',
+   'PYMODULE'),
+  ('services.paymentServices', '-', 'PYMODULE'),
+  ('services.paymentServices.paymentService',
+   'D:\\python_training_project\\services\\paymentServices\\paymentService.py',
+   'PYMODULE'),
+  ('services.restaurantServices',
+   'D:\\python_training_project\\services\\restaurantServices\\__init__.py',
+   'PYMODULE'),
+  ('services.restaurantServices.orderService',
+   'D:\\python_training_project\\services\\restaurantServices\\orderService.py',
+   'PYMODULE'),
+  ('services.restaurantServices.restaurantAuthServices',
+   'D:\\python_training_project\\services\\restaurantServices\\restaurantAuthServices.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\shutil.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\signal.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\socket.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\statistics.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\string.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tarfile.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\textwrap.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\threading.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\token.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tokenize.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\typing.py',
+   'PYMODULE'),
+  ('ui', '-', 'PYMODULE'),
+  ('ui.customer', '-', 'PYMODULE'),
+  ('ui.customer.customerHome',
+   'D:\\python_training_project\\ui\\customer\\customerHome.py',
+   'PYMODULE'),
+  ('ui.restaurent', '-', 'PYMODULE'),
+  ('ui.restaurent.menus', '-', 'PYMODULE'),
+  ('ui.restaurent.menus.addMenuUI',
+   'D:\\python_training_project\\ui\\restaurent\\menus\\addMenuUI.py',
+   'PYMODULE'),
+  ('ui.restaurent.menus.deleteMenuUI',
+   'D:\\python_training_project\\ui\\restaurent\\menus\\deleteMenuUI.py',
+   'PYMODULE'),
+  ('ui.restaurent.menus.displayAllMenuUI',
+   'D:\\python_training_project\\ui\\restaurent\\menus\\displayAllMenuUI.py',
+   'PYMODULE'),
+  ('ui.restaurent.menus.menuUI',
+   'D:\\python_training_project\\ui\\restaurent\\menus\\menuUI.py',
+   'PYMODULE'),
+  ('ui.restaurent.menus.updateMenuUI',
+   'D:\\python_training_project\\ui\\restaurent\\menus\\updateMenuUI.py',
+   'PYMODULE'),
+  ('ui.restaurent.orders', '-', 'PYMODULE'),
+  ('ui.restaurent.orders.orderListUI',
+   'D:\\python_training_project\\ui\\restaurent\\orders\\orderListUI.py',
+   'PYMODULE'),
+  ('ui.restaurent.restaurentHome',
+   'D:\\python_training_project\\ui\\restaurent\\restaurentHome.py',
+   'PYMODULE'),
+  ('ui.welcome', 'D:\\python_training_project\\ui\\welcome.py', 'PYMODULE'),
+  ('urllib',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('utils', 'D:\\python_training_project\\utils\\__init__.py', 'PYMODULE'),
+  ('utils.custom_exceptions',
+   'D:\\python_training_project\\utils\\custom_exceptions.py',
+   'PYMODULE'),
+  ('utils.input_helpers',
+   'D:\\python_training_project\\utils\\input_helpers.py',
+   'PYMODULE'),
+  ('utils.validators',
+   'D:\\python_training_project\\utils\\validators.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipfile\\__init__.py',
+   'PYMODULE'),
+  ('zipfile.__main__',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipfile\\__main__.py',
+   'PYMODULE'),
+  ('zipfile._path',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipfile\\_path\\__init__.py',
+   'PYMODULE'),
+  ('zipfile._path.glob',
+   'C:\\Users\\Mugesh '
+   'Siva\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\zipfile\\_path\\glob.py',
+   'PYMODULE')])
