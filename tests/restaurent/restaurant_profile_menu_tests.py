@@ -10,15 +10,17 @@ from services.restaurantServices.restaurantAuthServices import createRestaurant,
 
 
 class RestaurantProfileMenuTests(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         setupDatabase()
-        self.restaurant_id = f"restaurant_menu_{uuid.uuid4().hex[:8]}"
-        self.email = f"{self.restaurant_id}@example.com"
-        createRestaurant("Menu Kitchen", "Kitchen Road", "+91 98777 65432", self.restaurant_id, self.email, "Password@123")
+        cls.restaurant_id = f"restaurant_menu_{uuid.uuid4().hex[:8]}"
+        cls.email = f"{cls.restaurant_id}@example.com"
+        createRestaurant("Menu Kitchen", "Kitchen Road", "+91 98777 65432", cls.restaurant_id, cls.email, "Password@123")
 
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(cls):
         from tests.test_utils import cleanup_test_user
-        cleanup_test_user(self.restaurant_id)
+        cleanup_test_user(cls.restaurant_id)
 
     def test_update_profile(self):
         result = updateRestaurantProfile(self.restaurant_id, "name", "Updated Kitchen")

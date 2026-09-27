@@ -7,18 +7,20 @@ from utils.validators import validate_email, validate_name, validate_contact
 
 
 class CustomerAuthTests(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         setupDatabase()
-        self.test_user_ids = []
-        self.customer_id = f"customer_{uuid.uuid4().hex[:8]}"
-        self.test_user_ids.append(self.customer_id)
-        self.password = "Password@123"
-        self.email = f"{self.customer_id}@example.com"
-        createCustomer("Alice", "Main Street", "+91 98765 43210", self.customer_id, self.email, self.password)
+        cls.test_user_ids = []
+        cls.customer_id = f"customer_{uuid.uuid4().hex[:8]}"
+        cls.test_user_ids.append(cls.customer_id)
+        cls.password = "Password@123"
+        cls.email = f"{cls.customer_id}@example.com"
+        createCustomer("Alice", "Main Street", "+91 98765 43210", cls.customer_id, cls.email, cls.password)
 
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(cls):
         from tests.test_utils import cleanup_test_user
-        for uid in self.test_user_ids:
+        for uid in cls.test_user_ids:
             cleanup_test_user(uid)
 
     def test_name_validation(self):

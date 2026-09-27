@@ -7,15 +7,17 @@ from services.customerServices.customerAuthServices import createCustomer, updat
 
 
 class CustomerProfileBalanceTests(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         setupDatabase()
-        self.customer_id = f"customer_profile_{uuid.uuid4().hex[:8]}"
-        self.email = f"{self.customer_id}@example.com"
-        createCustomer("Maya", "Street 8", "+91 90000 11111", self.customer_id, self.email, "Password@123")
+        cls.customer_id = f"customer_profile_{uuid.uuid4().hex[:8]}"
+        cls.email = f"{cls.customer_id}@example.com"
+        createCustomer("Maya", "Street 8", "+91 90000 11111", cls.customer_id, cls.email, "Password@123")
 
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(cls):
         from tests.test_utils import cleanup_test_user
-        cleanup_test_user(self.customer_id)
+        cleanup_test_user(cls.customer_id)
 
     def test_update_name(self):
         result = updateCustomerProfile(self.customer_id, "name", "Maya New Name")

@@ -10,21 +10,23 @@ from services.restaurantServices.restaurantAuthServices import createRestaurant
 
 
 class CustomerCartOrderTests(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         setupDatabase()
-        self.customer_id = f"customer_cart_{uuid.uuid4().hex[:8]}"
-        self.restaurant_id = f"restaurant_cart_{uuid.uuid4().hex[:8]}"
+        cls.customer_id = f"customer_cart_{uuid.uuid4().hex[:8]}"
+        cls.restaurant_id = f"restaurant_cart_{uuid.uuid4().hex[:8]}"
 
-        createCustomer("Cart Buyer", "Cart Street", "+91 91111 22222", self.customer_id, f"{self.customer_id}@example.com", "Password@123")
-        createRestaurant("Cart Kitchen", "Kitchen Street", "+91 92222 33333", self.restaurant_id, f"{self.restaurant_id}@example.com", "Password@123")
+        createCustomer("Cart Buyer", "Cart Street", "+91 91111 22222", cls.customer_id, f"{cls.customer_id}@example.com", "Password@123")
+        createRestaurant("Cart Kitchen", "Kitchen Street", "+91 92222 33333", cls.restaurant_id, f"{cls.restaurant_id}@example.com", "Password@123")
 
-        result = addMenu(self.restaurant_id, "Crispy Burger", "Fresh burger", 120.0, "Protein")
-        self.menu_id = result["menu_id"]
+        result = addMenu(cls.restaurant_id, "Crispy Burger", "Fresh burger", 120.0, "Protein")
+        cls.menu_id = result["menu_id"]
 
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(cls):
         from tests.test_utils import cleanup_test_user
-        cleanup_test_user(self.customer_id)
-        cleanup_test_user(self.restaurant_id)
+        cleanup_test_user(cls.customer_id)
+        cleanup_test_user(cls.restaurant_id)
 
     def test_add_to_cart(self):
         result = add_item_to_cart(self.customer_id, self.menu_id, 2)

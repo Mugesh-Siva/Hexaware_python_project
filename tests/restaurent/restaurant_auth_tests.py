@@ -7,18 +7,20 @@ from utils.validators import validate_email, validate_name, validate_contact, va
 
 
 class RestaurantAuthTests(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         setupDatabase()
-        self.test_restaurant_ids = []
-        self.restaurant_id = f"restaurant_{uuid.uuid4().hex[:8]}"
-        self.test_restaurant_ids.append(self.restaurant_id)
-        self.password = "Password@123"
-        self.email = f"{self.restaurant_id}@example.com"
-        createRestaurant("Bite House", "Food Street", "+91 99888 77666", self.restaurant_id, self.email, self.password)
+        cls.test_restaurant_ids = []
+        cls.restaurant_id = f"restaurant_{uuid.uuid4().hex[:8]}"
+        cls.test_restaurant_ids.append(cls.restaurant_id)
+        cls.password = "Password@123"
+        cls.email = f"{cls.restaurant_id}@example.com"
+        createRestaurant("Bite House", "Food Street", "+91 99888 77666", cls.restaurant_id, cls.email, cls.password)
 
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(cls):
         from tests.test_utils import cleanup_test_user
-        for rid in self.test_restaurant_ids:
+        for rid in cls.test_restaurant_ids:
             cleanup_test_user(rid)
 
     def test_name_validation(self):

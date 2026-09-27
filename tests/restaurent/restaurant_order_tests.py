@@ -11,22 +11,24 @@ from services.restaurantServices.restaurantAuthServices import createRestaurant
 
 
 class RestaurantOrderTests(unittest.TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         setupDatabase()
-        self.customer_id = f"customer_order_{uuid.uuid4().hex[:8]}"
-        self.restaurant_id = f"restaurant_order_{uuid.uuid4().hex[:8]}"
+        cls.customer_id = f"customer_order_{uuid.uuid4().hex[:8]}"
+        cls.restaurant_id = f"restaurant_order_{uuid.uuid4().hex[:8]}"
 
-        createCustomer("Order Customer", "Order Street", "+91 90001 23456", self.customer_id, f"{self.customer_id}@example.com", "Password@123")
-        createRestaurant("Order Kitchen", "Kitchen Road", "+91 97777 66555", self.restaurant_id, f"{self.restaurant_id}@example.com", "Password@123")
+        createCustomer("Order Customer", "Order Street", "+91 90001 23456", cls.customer_id, f"{cls.customer_id}@example.com", "Password@123")
+        createRestaurant("Order Kitchen", "Kitchen Road", "+91 97777 66555", cls.restaurant_id, f"{cls.restaurant_id}@example.com", "Password@123")
 
-        menu_result = addMenu(self.restaurant_id, "Noodles Bowl", "Fresh noodles", 250, "Carbs")
-        self.menu_id = menu_result["menu_id"]
-        add_item_to_cart(self.customer_id, self.menu_id, 2)
+        menu_result = addMenu(cls.restaurant_id, "Noodles Bowl", "Fresh noodles", 250, "Carbs")
+        cls.menu_id = menu_result["menu_id"]
+        add_item_to_cart(cls.customer_id, cls.menu_id, 2)
 
-    def tearDown(self):
+    @classmethod
+    def tearDownClass(cls):
         from tests.test_utils import cleanup_test_user
-        cleanup_test_user(self.customer_id)
-        cleanup_test_user(self.restaurant_id)
+        cleanup_test_user(cls.customer_id)
+        cleanup_test_user(cls.restaurant_id)
 
     def test_restaurant_can_see_order(self):
         place_order_from_cart(self.customer_id, "cash")
