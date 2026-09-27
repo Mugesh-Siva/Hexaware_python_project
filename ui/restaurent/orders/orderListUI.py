@@ -35,10 +35,10 @@ class orderListUI:
             for item in order["items"]:
                 print(
                     f"  - {item['title']} x{item['quantity']} "
-                    f"@ ₹{item['price_at_order']:.2f} each"
+                    f"@ Rs.{item['price_at_order']:.2f} each"
                 )
 
-            print(f"Total Amount   : ₹{order['total_price']:.2f}")
+            print(f"Total Amount   : Rs.{order['total_price']:.2f}")
             print("-" * 49)
 
         print("=" * 49)

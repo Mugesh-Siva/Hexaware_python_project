@@ -21,6 +21,11 @@ class CustomerCartOrderTests(unittest.TestCase):
         result = addMenu(self.restaurant_id, "Crispy Burger", "Fresh burger", 120.0, "Protein")
         self.menu_id = result["menu_id"]
 
+    def tearDown(self):
+        from tests.test_utils import cleanup_test_user
+        cleanup_test_user(self.customer_id)
+        cleanup_test_user(self.restaurant_id)
+
     def test_add_to_cart(self):
         result = add_item_to_cart(self.customer_id, self.menu_id, 2)
         self.assertTrue(result["success"])

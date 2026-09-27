@@ -116,12 +116,17 @@ def updateCustomerProfile(user_id, field_name, new_value):
         )
         conn.commit()
         affected = cursor.rowcount
+        
+        if affected == 0:
+            cursor.execute("SELECT id FROM users WHERE id = %s AND role = %s", (user_id, "customer"))
+            if not cursor.fetchone():
+                cursor.close()
+                conn.close()
+                logger.warning(f"Customer profile update failed: customer {user_id} not found")
+                return {"success": False, "message": "Profile update failed. Customer not found."}
+
         cursor.close()
         conn.close()
-
-        if affected == 0:
-            logger.warning(f"Customer profile update failed: customer {user_id} not found")
-            return {"success": False, "message": "Profile update failed. Customer not found."}
 
         logger.info(f"Customer profile updated: {user_id} -> {field_name}")
         return {"success": True, "message": "Profile updated successfully."}

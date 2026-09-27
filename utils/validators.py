@@ -85,7 +85,7 @@ def validate_amount(value):
     if amount <= 0:
         return False, "Amount must be greater than 0."
     if amount > 1000000:
-        return False, "Amount cannot exceed ₹1,000,000."
+        return False, "Amount cannot exceed Rs.1,000,000."
     return True, "Amount is valid."
 
 

@@ -116,12 +116,17 @@ def updateRestaurantProfile(user_id, field_name, new_value):
         )
         conn.commit()
         affected = cursor.rowcount
+        
+        if affected == 0:
+            cursor.execute("SELECT id FROM users WHERE id = %s AND role = %s", (user_id, "restaurant"))
+            if not cursor.fetchone():
+                cursor.close()
+                conn.close()
+                logger.warning(f"Restaurant profile update failed: restaurant {user_id} not found")
+                return {"success": False, "message": "Profile update failed. Restaurant not found."}
+
         cursor.close()
         conn.close()
-
-        if affected == 0:
-            logger.warning(f"Restaurant profile update failed: restaurant {user_id} not found")
-            return {"success": False, "message": "Profile update failed. Restaurant not found."}
 
         logger.info(f"Restaurant profile updated: {user_id} -> {field_name}")
         return {"success": True, "message": "Profile updated successfully."}

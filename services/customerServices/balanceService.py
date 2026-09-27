@@ -36,7 +36,7 @@ def add_hotbite_balance(user_id, amount):
 
         return {
             "success": True,
-            "message": f"Hotbite balance topped up successfully by ₹{amount:.2f}.",
+            "message": f"Hotbite balance topped up successfully by Rs.{amount:.2f}.",
         }
     except ValueError:
         return {"success": False, "message": "Invalid amount. Please enter a valid number."}

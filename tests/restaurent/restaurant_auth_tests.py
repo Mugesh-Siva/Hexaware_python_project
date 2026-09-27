@@ -9,10 +9,17 @@ from utils.validators import validate_email, validate_name, validate_contact, va
 class RestaurantAuthTests(unittest.TestCase):
     def setUp(self):
         setupDatabase()
+        self.test_restaurant_ids = []
         self.restaurant_id = f"restaurant_{uuid.uuid4().hex[:8]}"
+        self.test_restaurant_ids.append(self.restaurant_id)
         self.password = "Password@123"
         self.email = f"{self.restaurant_id}@example.com"
         createRestaurant("Bite House", "Food Street", "+91 99888 77666", self.restaurant_id, self.email, self.password)
+
+    def tearDown(self):
+        from tests.test_utils import cleanup_test_user
+        for rid in self.test_restaurant_ids:
+            cleanup_test_user(rid)
 
     def test_name_validation(self):
         valid, message = validate_name("Bite House")
@@ -32,6 +39,7 @@ class RestaurantAuthTests(unittest.TestCase):
 
     def test_registration_success(self):
         new_id = f"restaurant_{uuid.uuid4().hex[:8]}"
+        self.test_restaurant_ids.append(new_id)
         new_email = f"{new_id}@example.com"
         result = createRestaurant("Cafe Food", "Street 9", "+91 99000 11111", new_id, new_email, "Password@123")
         self.assertTrue(result["success"])

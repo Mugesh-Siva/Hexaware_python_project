@@ -49,7 +49,7 @@ class customerHome:
         print(f"Customer ID: {self.id}")
         print(f"Delivery Address: {address}")
         print(f"Contact Number: {contact}")
-        print(f"Hotbite Balance: ₹{balance:.2f}")
+        print(f"Hotbite Balance: Rs.{balance:.2f}")
         print("-" * 49)
 
     def start(self):
@@ -109,7 +109,7 @@ class customerHome:
             print(f"Address: {customer.get('address', 'Not set')}")
             print(f"Contact Number: {customer.get('contact_number', 'Not set')}")
             print(f"Recovery Email: {customer.get('recovery_email', 'Not set')}")
-            print(f"Hotbite Balance: ₹{balance:.2f}")
+            print(f"Hotbite Balance: Rs.{balance:.2f}")
             print("-" * 49)
             print("1. Edit name")
             print("2. Edit address")
@@ -181,7 +181,7 @@ class customerHome:
                 for item in items:
                     menu_id, title, description, price, nutrients, availability, user_id = item
                     status = "Available" if availability == 1 else "Unavailable"
-                    print(f"{menu_id}. {title} - ₹{price}")
+                    print(f"{menu_id}. {title} - Rs.{price}")
                     print(f"   {description}")
                     print(f"   Nutrients: {nutrients or 'Not specified'} | Status: {status}")
                 print("-" * 49)
@@ -277,7 +277,7 @@ class customerHome:
                 for item in items:
                     menu_id, title, description, price, nutrients, availability, user_id = item
                     status = "Available" if availability == 1 else "Unavailable"
-                    print(f"{menu_id}. {title} - ₹{price}")
+                    print(f"{menu_id}. {title} - Rs.{price}")
                     print(f"   {description}")
                     print(f"   Nutrients: {nutrients or 'Not specified'} | Status: {status}")
                 print("-" * 49)
@@ -371,11 +371,11 @@ class customerHome:
 
                 for index, item in enumerate(items, start=1):
                     print(
-                        f"{index}. {item['title']}   x{item['quantity']}   ₹{item['price']}   = ₹{item['subtotal']}"
+                        f"{index}. {item['title']}   x{item['quantity']}   Rs.{item['price']}   = Rs.{item['subtotal']}"
                     )
 
                 print("-" * 49)
-                print(f"Cart Total: ₹{result['total']:.2f}")
+                print(f"Cart Total: Rs.{result['total']:.2f}")
                 print(f"Total Items: {sum(item['quantity'] for item in items)}")
                 print("-" * 49)
                 print("1. Update quantity")
@@ -642,9 +642,9 @@ class customerHome:
             print("=" * 49)
             print("Your order summary:")
             for index, item in enumerate(items, start=1):
-                print(f"{index}. {item['title']} x{item['quantity']} @ ₹{item['price']} = ₹{item['subtotal']:.2f}")
+                print(f"{index}. {item['title']} x{item['quantity']} @ Rs.{item['price']} = Rs.{item['subtotal']:.2f}")
             print("-" * 49)
-            print(f"TOTAL: ₹{total:.2f}")
+            print(f"TOTAL: Rs.{total:.2f}")
             print("-" * 49)
 
             confirm = input("Press Enter to continue to payment, or type 0 to cancel: ").strip()
@@ -674,7 +674,7 @@ class customerHome:
 
                 if payment_choice == "2":
                     balance = get_hotbite_balance(self.id)
-                    print(f"Your Hotbite balance: ₹{balance:.2f}")
+                    print(f"Your Hotbite balance: Rs.{balance:.2f}")
                     if balance < total:
                         print("Insufficient Hotbite balance.")
                         option, option_error = confirm_action(input("Would you like to add balance now? (y/n): ").strip())
@@ -703,7 +703,7 @@ class customerHome:
 
                     print("=" * 49)
                     print(order_result["message"])
-                    print(f"Order total: ₹{total:.2f}")
+                    print(f"Order total: Rs.{total:.2f}")
                     print(f"Payment mode: Hotbite balance")
                     print("=" * 49)
                     return
@@ -746,7 +746,7 @@ class customerHome:
 
                     print("=" * 49)
                     print(order_result["message"])
-                    print(f"Order total: ₹{total:.2f}")
+                    print(f"Order total: Rs.{total:.2f}")
                     print(f"Payment mode: {payment_mode}")
                     print("=" * 49)
                     return
@@ -783,8 +783,8 @@ class customerHome:
                 print(f"Date: {order['created_at']}")
                 print("Items:")
                 for item in order["items"]:
-                    print(f"  - {item['title']} x{item['quantity']} @ ₹{item['price_at_order']:.2f}")
-                print(f"Total: ₹{order['total_price']:.2f}")
+                    print(f"  - {item['title']} x{item['quantity']} @ Rs.{item['price_at_order']:.2f}")
+                print(f"Total: Rs.{order['total_price']:.2f}")
                 print("-" * 49)
 
         except Exception as exc:

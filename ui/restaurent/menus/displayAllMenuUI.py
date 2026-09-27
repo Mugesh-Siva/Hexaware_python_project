@@ -40,7 +40,7 @@ class displayAllMenuUI:
             print(f"Menu ID     : {menu_id}")
             print(f"Title       : {title}")
             print(f"Description : {description}")
-            print(f"Price       : ₹{price}")
+            print(f"Price       : Rs.{price}")
             print(f"Status      : {status}")
             print(f"Nutrients   : {nutrients or 'Not specified'}")
             print(f"Created At  : {created_at}")

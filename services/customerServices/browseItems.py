@@ -1,3 +1,4 @@
+import mysql.connector
 import database.connection as connection
 from utils.log_config import logger
 
@@ -174,6 +175,11 @@ def add_item_to_cart(user_id, menu_id, quantity):
     except ValueError:
         logger.warning(f"Customer {user_id} entered invalid quantity while adding to cart")
         return {"success": False, "message": "Invalid quantity. Please enter a positive integer."}
+    except mysql.connector.Error as err:
+        logger.error(f"Database error while adding item to cart for {user_id}: {err}")
+        if err.errno == 1452:
+            return {"success": False, "message": "Session invalid: Your user account was not found in the database. Please logout and login again."}
+        return {"success": False, "message": f"Database error: {err.msg}"}
     except Exception as exc:
         logger.error(f"Error while adding item to cart for {user_id}: {exc}")
         return {"success": False, "message": f"Error while adding to cart: {exc}"}

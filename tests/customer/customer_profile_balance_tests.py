@@ -13,6 +13,10 @@ class CustomerProfileBalanceTests(unittest.TestCase):
         self.email = f"{self.customer_id}@example.com"
         createCustomer("Maya", "Street 8", "+91 90000 11111", self.customer_id, self.email, "Password@123")
 
+    def tearDown(self):
+        from tests.test_utils import cleanup_test_user
+        cleanup_test_user(self.customer_id)
+
     def test_update_name(self):
         result = updateCustomerProfile(self.customer_id, "name", "Maya New Name")
         self.assertTrue(result["success"])
